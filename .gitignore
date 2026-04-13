@@ -1,0 +1,63 @@
+# ============================================
+# .gitignore untuk Aplikasi Pelaporan Sampah
+# ============================================
+
+# Environment files
+.env
+config/.env
+
+# Google OAuth Config (jangan commit Client Secret!)
+config/google_config.php
+
+# Uploads (gambar user)
+uploads/*
+!uploads/.gitkeep
+
+# Logs
+logs/*
+!logs/.gitkeep
+*.log
+
+# Backups
+*.sql.bak
+*.sql.backup
+*_BACKUP_*.sql
+
+# IDE & Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+
+# PHP
+vendor/
+composer.lock
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+
+# Don't ignore these
+!.htaccess
+!.gitignore
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+[
+    {
+        "key": "AIzaSyBzayFvPgJ5Fdguv9CbIF5xz2WpvqavIek",
+        "status": "active",
+        "last_used": 1774523406,
+        "error_count": 0,
+        "limit_reset_at": 0
+    },
+    {
+        "key": "AIzaSyApVzC3M9C3xnF1vFTRTLxhj_M8xk89-68",
+        "status": "active",
+        "last_used": 1775905547,
+        "error_count": 0,
+        "limit_reset_at": 0
+    },
+    {
+        "key": "AIzaSyBWjspU3auwbsk0EmhY0hmTHeo04JVIG04",
+        "status": "active",
+        "last_used": 1775905939,
+        "error_count": 0,
+        "limit_reset_at": 0
+    },
+    {
+        "key": "AIzaSyCk9YIKog3L4usX_kdd27ORW0Zfsqivxjg",
+        "status": "active",
+        "last_used": 1769685387,
+        "error_count": 1,
+        "limit_reset_at": 0
+    }
+]
