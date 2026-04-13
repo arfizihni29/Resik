@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
--- Password default untuk admin dan user1: password
+
 INSERT INTO `users` (`id`, `username`, `password`, `nama`, `nomor_hp`, `alamat`, `latitude`, `longitude`, `role`, `created_at`) VALUES
 (1, 'admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Administrator', NULL, 'Kantor Admin', -6.20000000, 106.81666600, 'admin', '2025-10-26 10:04:45'),
 (2, 'user1', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'User Sample', NULL, 'Jl. Sample No. 1', 3.51067891, 98.67994116, 'user', '2025-10-26 10:04:45'),
@@ -103,15 +103,11 @@ CREATE TABLE IF NOT EXISTS `user_locations` (
   CONSTRAINT `user_locations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- ============================================
--- DATA: user_locations
--- ============================================
+
 INSERT INTO `user_locations` (`id`, `user_id`, `name`, `latitude`, `longitude`, `address`, `last_used`, `created_at`) VALUES
 (1, 2, 'rumah', 3.51033525, 98.67981025, 'Jalan Damai, Suka Makmur, Mekar Sari, Deli Serdang, Sumatera Utara, Sumatra, 20144, Indonesia', '2025-10-27 01:52:33', '2025-10-27 01:52:33');
 
--- ============================================
--- TABLE: report_comments (Komentar Admin)
--- ============================================
+
 CREATE TABLE IF NOT EXISTS `report_comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `report_id` int(11) NOT NULL,
