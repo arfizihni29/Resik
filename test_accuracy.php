@@ -61,7 +61,7 @@ $currentPage = 'test_accuracy';
                 <i class="fas fa-chevron-left me-2"></i> Kembali ke Beranda
             </a>
             <span class="navbar-text text-white">
-                <i class="fas fa-robot text-info"></i> Tool Uji Akurasi AI
+                <i class="fas fa-microchip text-info"></i> Tool Uji Validasi Sistem
             </span>
         </div>
     </nav>
@@ -70,8 +70,8 @@ $currentPage = 'test_accuracy';
         <!-- Header & Stats -->
         <div class="row align-items-center mb-4">
             <div class="col-md-6 mb-3 mb-md-0">
-                <h2 class="fw-bold text-gray-800">Uji Akurasi AI</h2>
-                <p class="text-muted">Upload banyak gambar sekaligus untuk menguji performa model AI.</p>
+                <h2 class="fw-bold text-gray-800">Uji Akurasi Sistem</h2>
+                <p class="text-muted">Upload banyak gambar sekaligus untuk menguji performa model klasifikasi.</p>
                 <div class="alert alert-info py-2">
                     <small><i class="fas fa-info-circle"></i> Model yang digunakan sama dengan yang ada di halaman pelaporan user.</small>
                 </div>
