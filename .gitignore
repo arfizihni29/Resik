@@ -53,6 +53,11 @@ Desktop.ini
 !.htaccess
 !.gitignore
 
+# Sensitive configs
+config/api_keys.json
+config/ai_config.php
+config/Database.php
+
 
 
 
