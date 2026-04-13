@@ -873,7 +873,7 @@ $daysSinceJoin = $now->diff($joinDate)->days;
 
     <!-- Footer -->
     <div class="footer">
-        <p>&copy; 2024 Aplikasi Pelaporan Sampah dengan AI | Powered by Teachable Machine</p>
+        <p>&copy; 2024 Sistem Pelaporan Sampah Desa | Powered by Teachable Machine</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $alamat_lokasi = trim($_POST['alamat_lokasi']);
     $whatsapp_number = trim($_POST['whatsapp_number']); // Nomor WhatsApp
     $confidence = $_POST['confidence'];
-    $ai_prediction = $_POST['ai_prediction'];
+    $engine_prediction = $_POST['engine_prediction'];
     $is_corrected = (isset($_POST['is_corrected']) && $_POST['is_corrected'] == '1') ? 1 : 0;
     $correction_note = trim($_POST['correction_note'] ?? '');
     $tags = trim($_POST['tags'] ?? ''); // Tags untuk analitik
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $report->alamat_lokasi = $alamat_lokasi;
                 $report->whatsapp_number = $whatsapp_number; // Nomor WhatsApp
                 $report->confidence = $confidence;
-                $report->ai_prediction = $ai_prediction;
+                $report->engine_prediction = $engine_prediction;
                 $report->is_corrected = $is_corrected;
                 $report->correction_note = $correction_note;
                 $report->tags = $tags; // Tags untuk analitik
@@ -88,11 +88,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $success = 'Laporan berhasil dikirim!';
                     
 
-                    if ($is_corrected && $ai_prediction !== $kategori) {
+                    if ($is_corrected && $engine_prediction !== $kategori) {
                         $correctionManager = new CorrectionManager();
                         $correctionManager->saveCorrectedImage(
                             $uploadPath,
-                            $ai_prediction,
+                            $engine_prediction,
                             $kategori,
                             $reportId
                         );
@@ -1010,8 +1010,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             color: #14b8a6;
         }
         
-        /* AI Confirmation Modal Styles - Compact Version */
-        .ai-modal-overlay {
+        /* Analisis Confirmation Modal Styles - Compact Version */
+        .analysis-modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -1027,7 +1027,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             padding: 16px;
         }
         
-        .ai-modal-content {
+        .analysis-modal-content {
             background: white;
             border-radius: 20px;
             max-width: 400px; /* Reduced width */
@@ -1038,7 +1038,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             overflow: hidden;
         }
         
-        .ai-modal-header {
+        .analysis-modal-header {
             background: linear-gradient(135deg, #14b8a6, #0d9488);
             color: white;
             padding: 16px; /* Reduced padding */
@@ -2388,7 +2388,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Footer -->
     <div class="footer">
-        <p>&copy; 2024 Aplikasi Pelaporan Sampah dengan AI | Powered by Teachable Machine</p>
+        <p>&copy; 2024 Sistem Pelaporan Sampah Lingkungan | Powered by Teachable Machine</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -3355,7 +3355,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             console.log('🔄 Change image clicked');
             
 
-            if (!confirm('Ganti gambar? Hasil analisis AI akan hilang dan harus dianalisis ulang.')) {
+            if (!confirm('Ganti gambar? Hasil analisis sebelumnya akan hilang dan harus dianalisis ulang.')) {
                 return;
             }
             
@@ -3370,7 +3370,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             document.getElementById('cameraInput').value = '';
             
 
-            aiConfirmed = false;
+            analysisConfirmed = false;
             document.getElementById('reviewSubmitBtn').disabled = true;
             
 
