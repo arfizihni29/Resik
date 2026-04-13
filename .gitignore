@@ -1,16 +1,8 @@
-# ============================================
-# .gitignore untuk Aplikasi Pelaporan Sampah
-# ============================================
 
-# Environment files
 .env
+.env.example
 config/.env
 
-# Google OAuth Config (jangan commit Client Secret!)
-# Google OAuth Config (Sekarang aman karena pakai .env)
-# config/google_config.php
-
-# Uploads (gambar user)
 uploads/*
 !uploads/.gitkeep
 

@@ -40,7 +40,7 @@ if (!isset($currentPage)) {
                         </li>
                         <li>
                             <a class="dropdown-item <?php echo $currentPage == 'koreksi' ? 'active' : ''; ?>" href="koreksi.php">
-                                <i class="fas fa-edit"></i> Koreksi AI
+                                <i class="fas fa-edit"></i> Koreksi Data
                             </a>
                         </li>
                         <li>
@@ -52,7 +52,7 @@ if (!isset($currentPage)) {
                         <li><h6 class="dropdown-header"><i class="fas fa-chart-bar"></i> Data & Analisis</h6></li>
                         <li>
                             <a class="dropdown-item <?php echo $currentPage == 'analytics' ? 'active' : ''; ?>" href="analytics.php">
-                                <i class="fas fa-brain"></i> Analytics & AI
+                                <i class="fas fa-brain"></i> Analytics & Insight
                             </a>
                         </li>
                         <li>
@@ -65,6 +65,11 @@ if (!isset($currentPage)) {
                         <li>
                             <a class="dropdown-item <?php echo $currentPage == 'users' ? 'active' : ''; ?>" href="users.php">
                                 <i class="fas fa-users"></i> Users
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item <?php echo $currentPage == 'engine_settings' ? 'active' : ''; ?>" href="engine_settings.php">
+                                <i class="fas fa-key"></i> Engine Settings
                             </a>
                         </li>
                         <li>
@@ -116,7 +121,7 @@ if (!isset($currentPage)) {
                             </a>
                             <a href="koreksi.php" class="mobile-menu-item <?php echo $currentPage == 'koreksi' ? 'active' : ''; ?>">
                                 <i class="fas fa-edit"></i>
-                                <span>Koreksi AI</span>
+                                <span>Koreksi Data</span>
                             </a>
                             <a href="corrections_gallery.php" class="mobile-menu-item <?php echo $currentPage == 'gallery' ? 'active' : ''; ?>">
                                 <i class="fas fa-images"></i>
@@ -128,7 +133,7 @@ if (!isset($currentPage)) {
                             </div>
                             <a href="analytics.php" class="mobile-menu-item <?php echo $currentPage == 'analytics' ? 'active' : ''; ?>">
                                 <i class="fas fa-brain"></i>
-                                <span>Analytics & AI</span>
+                                <span>Analytics & Insight</span>
                             </a>
                             <a href="peta.php" class="mobile-menu-item <?php echo $currentPage == 'peta' ? 'active' : ''; ?>">
                                 <i class="fas fa-map"></i>
@@ -141,6 +146,10 @@ if (!isset($currentPage)) {
                             <a href="users.php" class="mobile-menu-item <?php echo $currentPage == 'users' ? 'active' : ''; ?>">
                                 <i class="fas fa-users"></i>
                                 <span>Users</span>
+                            </a>
+                            <a href="engine_settings.php" class="mobile-menu-item <?php echo $currentPage == 'engine_settings' ? 'active' : ''; ?>">
+                                <i class="fas fa-key"></i>
+                                <span>Engine Settings</span>
                             </a>
                             <a href="migration.php" class="mobile-menu-item <?php echo $currentPage == 'migration' ? 'active' : ''; ?>">
                                 <i class="fas fa-database"></i>

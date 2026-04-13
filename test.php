@@ -1,5 +1,5 @@
 <?php
-$source = file_get_contents('admin/ai_settings.php');
+$source = file_get_contents('admin/engine_settings.php');
 if ($source === false) die("Cannot read file");
 $tokens = token_get_all($source);
 $output = "";
@@ -19,6 +19,6 @@ foreach ($tokens as $token) {
 }
 
 $output = preg_replace('/<!--(.*?)-->/s', '', $output);
-file_put_contents('admin/ai_settings.php', $output);
+file_put_contents('admin/engine_settings.php', $output);
 echo "Done";
 ?>

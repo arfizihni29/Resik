@@ -1,5 +1,5 @@
 <?php
-require_once '../config/ai_config.php';
+require_once '../config/engine_config.php';
 
 header('Content-Type: application/json');
 
@@ -61,16 +61,16 @@ foreach ($keysData as $index => $k) {
 }
 
 
-if (empty($activeKeys) && defined('AI_KEYS')) {
-    foreach (AI_KEYS as $k) {
-        if (!empty($k) && strpos($k, 'PASTE') === false) {
+if (empty($activeKeys) && defined('ENGINE_KEYS')) {
+    foreach (ENGINE_KEYS as $k) {
+        if (!empty($k) && strpos($k, 'PASTE') === false && strpos($k, 'KEY_') === false) {
             $activeKeys[] = ['key' => $k, 'index' => -1];
         }
     }
 }
 
 if (empty($activeKeys)) {
-    sendJson(['error' => 'No active API Keys available. System overloaded.'], 503);
+    sendJson(['error' => 'No active Access Keys available. System overloaded.'], 503);
 }
 
 
@@ -101,7 +101,7 @@ $payload = [
     'contents' => [
         [
             'parts' => [
-                ['text' => AI_SYSTEM_PROMPT],
+                ['text' => ENGINE_SYSTEM_PROMPT],
                 [
                     'inlineData' => [  // camelCase
                         'mimeType' => 'image/jpeg', // camelCase
@@ -125,7 +125,7 @@ foreach ($activeKeys as $keyInfo) {
     $attempt++;
     
 
-    $url = AI_BASE_URL . '/' . AI_MODEL . ':generateContent?key=' . $currentKey;
+    $url = ENGINE_BASE_URL . '/' . ENGINE_MODEL . ':generateContent?key=' . $currentKey;
 
 
     $ch = curl_init($url);
@@ -158,7 +158,7 @@ foreach ($activeKeys as $keyInfo) {
 
         file_put_contents($jsonFile, json_encode($keysData, JSON_PRETTY_PRINT));
         
-        file_put_contents('debug_gemini_rotator.log', date('Y-m-d H:i:s') . " - Key limited: " . substr($currentKey, -4) . "\n", FILE_APPEND);
+        file_put_contents('debug_engine_rotator.log', date('Y-m-d H:i:s') . " - Key limited: " . substr($currentKey, -4) . "\n", FILE_APPEND);
     }
     
     if ($httpCode === 503) {
@@ -187,10 +187,10 @@ if ($httpCode !== 200) {
     $msg = $err['error']['message'] ?? "Unknown API Error (Code: $httpCode)";
     
     if ($httpCode === 429) {
-        $msg = "All API keys are currently rate limited. Please try again in 1 minute.";
+        $msg = "All Access keys are currently rate limited. Please try again in 1 minute.";
     }
     
-    sendJson(['error' => 'Gemini API Error: ' . $msg], 500);
+    sendJson(['error' => 'Service API Error: ' . $msg], 500);
 }
 
 
@@ -206,7 +206,7 @@ $text = $result['candidates'][0]['content']['parts'][0]['text'] ?? null;
 
 if (!$text) {
     $errorMsg = isset($result['error']) ? $result['error']['message'] : 'Invalid structure';
-    sendJson(['error' => 'AI API Error: ' . $errorMsg, 'raw_response' => $result], 500);
+    sendJson(['error' => 'Engine API Error: ' . $errorMsg, 'raw_response' => $result], 500);
 }
 
 
@@ -236,7 +236,7 @@ $finalResult = [
     'item_name' => $jsonResult['item_name'] ?? '', // Specific item name
     'confidence' => $jsonResult['confidence'] ?? 0.8,
     'objects' => $jsonResult['objects'] ?? [], // New field
-    'reason' => $jsonResult['reason'] ?? 'AI analysis completed (Auto-parsed)'
+    'reason' => $jsonResult['reason'] ?? 'Analysis completed (Auto-parsed)'
 ];
 
 

@@ -1,6 +1,6 @@
 <?php
 require_once '../config/config.php';
-require_once '../config/ai_config.php';
+require_once '../config/engine_config.php';
 
 header('Content-Type: application/json');
 
@@ -47,8 +47,8 @@ $data = [
     ]
 ];
 
-$apiKey = AI_KEY;
-$url = AI_BASE_URL . '/' . AI_MODEL . ':generateContent?key=' . $apiKey;
+$apiKey = ENGINE_KEY; // From engine_config.php
+$url = ENGINE_BASE_URL . '/' . ENGINE_MODEL . ':generateContent?key=' . $apiKey;
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -65,6 +65,6 @@ if ($httpCode === 200) {
     $text = $result['candidates'][0]['content']['parts'][0]['text'] ?? 'Gagal membuat rekomendasi.';
     echo json_encode(['success' => true, 'insight' => trim($text)]);
 } else {
-    echo json_encode(['error' => 'AI Service Unavailable', 'details' => $response]);
+    echo json_encode(['error' => 'Service Unavailable', 'details' => $response]);
 }
 ?>

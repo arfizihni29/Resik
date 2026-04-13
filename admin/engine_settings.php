@@ -15,7 +15,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     exit();
 }
 
-$pageTitle = "Pengaturan AI";
+$pageTitle = "Pengaturan Engine";
 $configFile = '../config/api_keys.json';
 
 
@@ -45,9 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'limit_reset_at' => 0
                 ];
                 file_put_contents($configFile, json_encode($data, JSON_PRETTY_PRINT));
-                $successMsg = "API Key berhasil ditambahkan!";
+                $successMsg = "Access Key berhasil ditambahkan!";
             } else {
-                $errorMsg = "API Key sudah ada!";
+                $errorMsg = "Access Key sudah ada!";
             }
         }
     }
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
         file_put_contents($configFile, json_encode($newData, JSON_PRETTY_PRINT));
-        $successMsg = "API Key dihapus.";
+        $successMsg = "Access Key dihapus.";
     }
     
     
@@ -116,7 +116,7 @@ $apiKeys = json_decode($jsonData, true) ?: [];
     <?php include 'includes/navbar.php'; ?>
     
     <div class="container py-5">
-                <h2 class="mb-4">🤖 Manajemen API Gemini</h2>
+                <h2 class="mb-4">⚙️ Manajemen Akses Engine</h2>
                 
                 <?php if (isset($successMsg)): ?>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -135,9 +135,9 @@ $apiKeys = json_decode($jsonData, true) ?: [];
                             <div class="card-body">
                                 <form method="POST">
                                     <div class="mb-3">
-                                        <label class="form-label">Gemini API Key</label>
-                                        <input type="text" name="new_key" class="form-control" placeholder="AIzaSy..." required>
-                                        <div class="form-text">Dapatkan di aistudio.google.com</div>
+                                        <label class="form-label">Access Key</label>
+                                        <input type="text" name="new_key" class="form-control" placeholder="Masukan Key..." required>
+                                        <div class="form-text">Key untuk akses engine klasifikasi</div>
                                     </div>
                                     <button type="submit" class="btn btn-primary w-100">Simpan Key</button>
                                 </form>
@@ -149,7 +149,7 @@ $apiKeys = json_decode($jsonData, true) ?: [];
                     <div class="col-md-8">
                         <div class="card shadow-sm">
                             <div class="card-header bg-white fw-bold d-flex justify-content-between align-items-center">
-                                <span><i class="fas fa-list"></i> Daftar API Key (<?php echo count($apiKeys); ?>)</span>
+                                <span><i class="fas fa-list"></i> Daftar Akes Key (<?php echo count($apiKeys); ?>)</span>
                                 <span class="badge bg-info text-dark">Auto-Rotation Active</span>
                             </div>
                             <div class="card-body p-0">

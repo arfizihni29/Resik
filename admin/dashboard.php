@@ -419,7 +419,7 @@ $allReports = $report->getAllReports();
                             <i class="fas fa-list"></i> Lihat Semua Laporan
                         </a>
                         <a href="analytics.php" class="btn btn-success btn-lg mb-2 shadow-sm">
-                            <i class="fas fa-brain"></i> Analytics & AI
+                            <i class="fas fa-brain"></i> Analytics & Insight
                         </a>
                     </div>
                 </div>
@@ -437,7 +437,7 @@ $allReports = $report->getAllReports();
 
     <!-- Footer -->
     <div class="footer text-center py-4 text-muted small">
-        <p>&copy; 2024 Aplikasi Pelaporan Sampah dengan AI | Powered by <a href="#" class="text-decoration-none" style="color: #0d9488;">Teachable Machine</a></p>
+        <p>&copy; 2024 Sistem Pelaporan Sampah Cerdas | Powered by <a href="#" class="text-decoration-none" style="color: #0d9488;">Teachable Machine</a></p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

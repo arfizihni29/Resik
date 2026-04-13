@@ -515,7 +515,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analytics & AI Recommendations - Admin</title>
+    <title>Analytics & Engine Insight - Admin</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -1750,7 +1750,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
         <div class="pdf-header" style="display: none;">
             <h2>
                 <i class="fas fa-brain" style="color: #14b8a6;"></i>
-                Analytics & Laporan Data Pengelolaan Sampah
+                Analytics & Laporan Wawasan Lingkungan
             </h2>
             <div class="pdf-date">
                 <i class="fas fa-calendar-alt"></i>
@@ -1767,10 +1767,10 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
             <div class="col-md-6">
                 <h2 class="mb-2" style="color: #1f2937; font-weight: 700; font-size: 1.875rem;">
                     <i class="fas fa-brain" style="color: #14b8a6; margin-right: 0.5rem;"></i>
-                    Analytics & AI Recommendations
+                    Analytics & Insight Strategis
                 </h2>
                 <p class="text-muted mb-0">
-                    <i class="fas fa-chart-bar me-2"></i>Analisis data mendalam & rekomendasi AI untuk pengelolaan sampah desa
+                    <i class="fas fa-chart-bar me-2"></i>Analisis data mendalam & rekomendasi otomatis untuk pengelolaan sampah desa
                 </p>
             </div>
             <div class="col-md-6 text-end">
@@ -2253,17 +2253,17 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
         });
 
 
-        function generateAIInsight() {
-            const btn = document.getElementById('btn-ask-ai');
-            const container = document.getElementById('ai-insight-container');
-            const textEl = document.getElementById('ai-insight-text');
-            const loader = document.getElementById('ai-loading');
-            const icon = document.getElementById('ai-icon');
+        function generateEngineInsight() {
+            const btn = document.getElementById('btn-ask-engine');
+            const container = document.getElementById('engine-insight-container');
+            const textEl = document.getElementById('engine-insight-text');
+            const loader = document.getElementById('engine-loading');
+            const icon = document.getElementById('engine-icon');
             
 
             container.style.display = 'block';
             btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Berpikir...';
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Memproses...';
             loader.style.display = 'inline-block';
             icon.style.display = 'none';
             textEl.innerHTML = 'Sedang menganalisis data statistik daur ulang terbaru...';
@@ -2275,7 +2275,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
                 <?php foreach(array_slice($topWasteTypes, 0, 3) as $t) echo "'" . addslashes($t['name']) . "',"; ?>
             ];
             
-            fetch('../api/generate_ai_insight.php', {
+            fetch('../api/generate_report_insight.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -2314,7 +2314,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
                     }
                     typeWriter();
                 } else {
-                    textEl.innerHTML = 'Maaf, AI sedang sibuk. (' + (data.error || 'Unknown error') + ')';
+                    textEl.innerHTML = 'Maaf, sistem sedang sibuk. (' + (data.error || 'Unknown error') + ')';
                 }
             })
             .catch(error => {
@@ -2323,14 +2323,14 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
             })
             .finally(() => {
                 btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-magic me-2 text-warning"></i>Tanya AI Assistant (Live)';
+                btn.innerHTML = '<i class="fas fa-magic me-2 text-warning"></i>Generate Wawasan (Live)';
                 loader.style.display = 'none';
                 icon.style.display = 'inline-block';
             });
         }
 
-        function closeAIInsight() {
-            document.getElementById('ai-insight-container').style.display = 'none';
+        function closeEngineInsight() {
+            document.getElementById('engine-insight-container').style.display = 'none';
         }
 
     </script>
