@@ -47,7 +47,7 @@ $data = [
     ]
 ];
 
-$apiKey = AI_KEY; // From ai_config.php
+$apiKey = AI_KEY;
 $url = AI_BASE_URL . '/' . AI_MODEL . ':generateContent?key=' . $apiKey;
 
 $ch = curl_init($url);

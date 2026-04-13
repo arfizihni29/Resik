@@ -7,7 +7,8 @@
 config/.env
 
 # Google OAuth Config (jangan commit Client Secret!)
-config/google_config.php
+# Google OAuth Config (Sekarang aman karena pakai .env)
+# config/google_config.php
 
 # Uploads (gambar user)
 uploads/*
@@ -55,8 +56,6 @@ Desktop.ini
 
 # Sensitive configs
 config/api_keys.json
-config/ai_config.php
-config/Database.php
 
 
 

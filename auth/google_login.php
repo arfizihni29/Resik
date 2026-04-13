@@ -10,7 +10,7 @@ require_once '../config/google_config.php';
 
 
 if (!defined('GOOGLE_CLIENT_SECRET') || empty(GOOGLE_CLIENT_SECRET) || GOOGLE_CLIENT_SECRET === '') {
-    $_SESSION['error'] = 'Google OAuth belum dikonfigurasi. Harap isi Client Secret di config/google_config.php';
+    $_SESSION['error'] = 'Google OAuth belum dikonfigurasi. Harap isi GOOGLE_CLIENT_SECRET di file .env';
     if (strpos($_SERVER['REQUEST_URI'], 'dashboard') !== false) {
 
         redirect('login.php');
