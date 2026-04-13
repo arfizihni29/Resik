@@ -134,12 +134,12 @@ $commentCount = count($reportComments);
                                     </p>
                                     <?php if (!empty($reportData['ai_prediction'])): ?>
                                         <small class="text-muted">
-                                            Prediksi AI awal: <strong><?php echo strtoupper($reportData['ai_prediction']); ?></strong>
+                                            Hasil Analisis Awal: <strong><?php echo strtoupper($reportData['engine_prediction']); ?></strong>
                                         </small>
                                     <?php endif; ?>
                                 </div>
                             <?php else: ?>
-                                <h5><i class="fas fa-robot"></i> Hasil Klasifikasi AI</h5>
+                                <h5><i class="fas fa-microchip"></i> Hasil Analisis Sistem</h5>
                             <?php endif; ?>
                             
                             <?php
@@ -384,7 +384,7 @@ $commentCount = count($reportComments);
 
     <!-- Footer -->
     <div class="footer">
-        <p>&copy; 2024 Aplikasi Pelaporan Sampah dengan AI | Powered by Teachable Machine</p>
+        <p>&copy; 2024 RESIK - Sistem Manajemen Sampah Desa</p>
     </div>
 
     <!-- Image Zoom Modal -->

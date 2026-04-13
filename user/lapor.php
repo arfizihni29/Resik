@@ -1010,8 +1010,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             color: #14b8a6;
         }
         
-        /* Analisis Confirmation Modal Styles - Compact Version */
-        .analysis-modal-overlay {
+        /* Engine Confirmation Modal Styles - Compact Version */
+        .engine-modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -1027,7 +1027,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             padding: 16px;
         }
         
-        .analysis-modal-content {
+        .engine-modal-content {
             background: white;
             border-radius: 20px;
             max-width: 400px; /* Reduced width */
@@ -1038,28 +1038,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             overflow: hidden;
         }
         
-        .analysis-modal-header {
+        .engine-modal-header {
             background: linear-gradient(135deg, #14b8a6, #0d9488);
             color: white;
             padding: 16px; /* Reduced padding */
             text-align: center;
         }
         
-        .ai-modal-header i {
+        .engine-modal-header i {
             font-size: 2.25rem; /* Reduced icon size */
             animation: bounce 1s infinite;
         }
         
-        .ai-modal-header h4 {
+        .engine-modal-header h4 {
             font-size: 1.25rem; /* Reduced font size */
             margin-top: 0.5rem !important;
         }
 
-        .ai-modal-body {
+        .engine-modal-body {
             padding: 20px 16px; /* Reduced padding */
         }
         
-        .ai-result-card {
+        .engine-result-card {
             background: #f0fdf4;
             border: 2px solid #14b8a6;
             border-radius: 12px;
@@ -1068,16 +1068,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin-bottom: 16px; /* Reduced margin */
         }
         
-        .ai-result-icon {
+        .engine-result-icon {
             font-size: 2.5rem; /* Reduced icon size */
             margin-bottom: 8px;
         }
         
-        .ai-result-card h3 {
+        .engine-result-card h3 {
             font-size: 1.5rem; /* Reduced font size */
         }
 
-        .ai-confidence {
+        .engine-confidence {
             display: inline-block;
             background: white;
             padding: 6px 12px; /* Reduced padding */
@@ -1088,13 +1088,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin-top: 6px;
         }
         
-        .ai-modal-actions {
+        .engine-modal-actions {
             display: flex;
             gap: 10px;
             margin-top: 16px; /* Reduced margin */
         }
         
-        .ai-modal-btn {
+        .engine-modal-btn {
             flex: 1;
             padding: 12px; /* Reduced padding */
             border: none;
@@ -1109,7 +1109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             gap: 6px;
         }
         
-        .ai-modal-btn:active {
+        .engine-modal-btn:active {
             transform: scale(0.95);
         }
         
@@ -1131,22 +1131,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             background: #d97706;
         }
 
-        /* Mobile specific adjustments for AI Modal */
+        /* Mobile specific adjustments for Engine Modal */
         @media (max-width: 576px) {
-            .ai-modal-content {
+            .engine-modal-content {
                 max-width: 340px; /* Even smaller width for mobile */
                 border-radius: 16px;
             }
             
-            .ai-modal-header {
+            .engine-modal-header {
                 padding: 12px;
             }
             
-            .ai-modal-header i {
+            .engine-modal-header i {
                 font-size: 1.75rem;
             }
             
-            .ai-modal-header h4 {
+            .engine-modal-header h4 {
                 font-size: 1.1rem;
             }
             
@@ -1404,7 +1404,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
         
-        /* Form sections that get enabled after AI confirmation */
+        /* Form sections that get enabled after analysis confirmation */
         .form-disabled {
             pointer-events: none;
             opacity: 0.5;
@@ -1676,7 +1676,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <i class="fas fa-recycle" style="-webkit-text-fill-color: #14b8a6;"></i> Lapor Sampah Pintar
                     </h1>
                     <p style="font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto 2rem;">
-                        Laporkan sampah dengan bantuan AI yang otomatis mengklasifikasi jenis sampah Anda
+                        Laporkan sampah dengan fitur klasifikasi otomatis yang cerdas.
                     </p>
                 </div>
 
@@ -1707,7 +1707,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
                     <div class="progress-step" id="step2">
                         <div class="progress-step-circle">2</div>
-                        <div class="progress-step-label">Konfirmasi AI</div>
+                        <div class="progress-step-label">Konfirmasi Data</div>
                     </div>
                     <div class="progress-step" id="step3">
                         <div class="progress-step-circle">3</div>
@@ -1824,7 +1824,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <div class="alert alert-warning mb-3" style="background: #fffbeb; border: 1px solid #fcd34d; border-radius: 8px; padding: 0.75rem;">
                                     <small style="color: #78350f; font-size: 0.8125rem; line-height: 1.5;">
                                         <i class="fas fa-lightbulb" style="color: #f59e0b;"></i> 
-                                        <strong>Tips:</strong> AI akan otomatis mengklasifikasi setelah upload. Jika salah, Anda bisa koreksi manual. Pastikan foto jelas.
+                                        <strong>Tips:</strong> Sistem akan otomatis mengklasifikasi setelah upload. Jika salah, Anda bisa koreksi manual. Pastikan foto jelas.
                                     </small>
                                 </div>
 
@@ -1870,8 +1870,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </h6>
                                     <ul style="margin: 0; padding-left: 1.5rem; color: #78350f;">
                                         <li style="margin-bottom: 0.5rem;">✨ Pastikan sampah terlihat jelas dalam foto</li>
-                                        <li style="margin-bottom: 0.5rem;">🤖 AI akan otomatis mengklasifikasi jenis sampah</li>
-                                        <li>✅ Anda perlu konfirmasi hasil AI setelah upload</li>
+                                        <li style="margin-bottom: 0.5rem;">⚙️ Sistem akan otomatis mengklasifikasi jenis sampah</li>
+                                        <li>✅ Anda perlu konfirmasi hasil klasifikasi setelah upload</li>
                                     </ul>
                                 </div>
 
@@ -1939,7 +1939,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <!-- Loading Spinner -->
                                 <div class="spinner-container" id="loadingSpinner" style="display: none;">
                                 <div class="spinner-border" role="status"></div>
-                                <p class="mt-2">Menganalisis gambar dengan AI...</p>
+                                <p class="mt-2">Menganalisis gambar...</p>
                             </div>
 
                             <!-- Classification Result -->
@@ -1953,7 +1953,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <div id="correctionSection" style="display: none;" class="mb-3">
                                 <div class="card" style="border: 2px solid #ff9800;">
                                     <div class="card-header" style="background: #fff3e0; color: #f57c00;">
-                                        <i class="fas fa-edit"></i> Koreksi Manual (AI Salah)
+                                        <i class="fas fa-edit"></i> Koreksi Manual (Sistem Salah)
                                     </div>
                                     <div class="card-body">
                                         <!-- Info Box Bantuan -->
@@ -2505,7 +2505,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         
         async function analyzeImage(imgElement) {
-            console.log('🔬 Starting AI analysis...');
+            console.log('🔬 Starting image analysis...');
             const loadingSpinner = document.getElementById('loadingSpinner');
 
             try {
@@ -2554,11 +2554,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     
 
 
-                    showAIConfirmationModal(currentPrediction, predictions);
+                    showAnalysisConfirmationModal(currentPrediction, predictions);
                     
                 } else {
                     console.error('❌ No predictions returned');
-                    alert('❌ Gagal menganalisis gambar. Tidak ada respon dari AI.');
+                    alert('❌ Gagal menganalisis gambar. Tidak ada respon dari sistem.');
                 }
                 
             } catch (error) {
@@ -2569,10 +2569,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        function showAIConfirmationModal(prediction, predictions) {
+        function showAnalysisConfirmationModal(prediction, predictions) {
             console.log('📋 Showing confirmation modal for:', prediction.category);
             
-            const modal = document.getElementById('aiConfirmationModal');
+            const modal = document.getElementById('engineConfirmationModal');
             
 
             let categoryColor = '#4caf50';
@@ -2594,20 +2594,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
             
             modal.innerHTML = `
-                <div class="ai-modal-overlay">
-                    <div class="ai-modal-content">
-                        <div class="ai-modal-header">
+                <div class="engine-modal-overlay">
+                    <div class="engine-modal-content">
+                        <div class="engine-modal-header">
                             <i class="fas fa-robot"></i>
                             <h4 class="mt-3 mb-0">Hasil Deteksi Otomatis</h4>
                             <p class="mb-0 mt-2" style="font-size: 0.9rem; opacity: 0.9;">Mohon konfirmasi jenis sampah</p>
                         </div>
-                        <div class="ai-modal-body">
-                            <div class="ai-result-card" style="background: ${categoryColor}15; border-color: ${categoryColor};">
-                                <div class="ai-result-icon" style="color: ${categoryColor};">
+                        <div class="engine-modal-body">
+                            <div class="engine-result-card" style="background: ${categoryColor}15; border-color: ${categoryColor};">
+                                <div class="engine-result-icon" style="color: ${categoryColor};">
                                     <i class="fas fa-${categoryIcon}"></i>
                                 </div>
                                 <h3 style="color: ${categoryColor}; margin-bottom: 8px;">${categoryName}</h3>
-                                <div class="ai-confidence">
+                                <div class="engine-confidence">
                                     <i class="fas fa-chart-line"></i> ${prediction.confidence}% confidence
                                 </div>
                                 
@@ -2623,11 +2623,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </p>
                             </div>
                             
-                            <div class="ai-modal-actions">
-                                <button class="ai-modal-btn btn-confirm" onclick="confirmAIResult(true)">
+                            <div class="engine-modal-actions">
+                                <button class="engine-modal-btn btn-confirm" onclick="confirmAnalysisResult(true)">
                                     <i class="fas fa-check-circle"></i> Ya, Benar
                                 </button>
-                                <button class="ai-modal-btn btn-correct" onclick="confirmAIResult(false)">
+                                <button class="engine-modal-btn btn-correct" onclick="confirmAnalysisResult(false)">
                                     <i class="fas fa-edit"></i> Koreksi Manual
                                 </button>
                             </div>
@@ -2640,22 +2640,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
 
-        window.confirmAIResult = function(isCorrect) {
-            console.log('✓ User confirmed AI result:', isCorrect ? 'CORRECT' : 'NEEDS CORRECTION');
+        window.confirmAnalysisResult = function(isCorrect) {
+            console.log('✓ User confirmed analysis result:', isCorrect ? 'CORRECT' : 'NEEDS CORRECTION');
             
-            const modal = document.getElementById('aiConfirmationModal');
+            const modal = document.getElementById('engineConfirmationModal');
             modal.style.display = 'none';
             
-            aiConfirmed = true;
+            engineConfirmed = true;
             
             if (isCorrect) {
 
-                console.log('✅ Using AI prediction:', currentPrediction.category);
+                console.log('✅ Using engine prediction:', currentPrediction.category);
                 
 
                 document.getElementById('kategori').value = currentPrediction.category;
                 document.getElementById('confidence').value = currentPrediction.confidence;
-                document.getElementById('ai_prediction').value = currentPrediction.category;
+                document.getElementById('engine_prediction').value = currentPrediction.category;
                 document.getElementById('is_corrected').value = '0';
                 
 
@@ -2671,7 +2671,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 updateProgress(3);
                 
             } else {
-                console.log('⚠️ User wants to correct AI result');
+                console.log('⚠️ User wants to correct engine result');
                 
 
                 displayClassificationResult(currentPrediction, currentPrediction.reason);
@@ -2698,14 +2698,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 statusDiv.innerHTML = `
                     <div class="alert alert-success" style="border-left: 4px solid #14b8a6;">
                         <i class="fas fa-check-circle"></i> 
-                        <strong>Terkonfirmasi:</strong> Hasil AI sudah benar. Silakan lanjutkan mengisi detail.
+                        <strong>Terkonfirmasi:</strong> Hasil analisis sudah benar. Silakan lanjutkan mengisi detail.
                     </div>
                 `;
             } else if (type === 'correction_needed') {
                 statusDiv.innerHTML = `
-                    <div class="alert alert-warning" style="border-left: 4px solid #f59e0b;">
-                        <i class="fas fa-exclamation-triangle"></i> 
-                        <strong>Koreksi Diperlukan:</strong> Silakan pilih kategori yang benar di bawah.
+                    <div class="alert alert-warning" style="border-radius: 12px; border-left: 5px solid #f59e0b;">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <strong>Anda telah mengkoreksi hasil analisis</strong>
+                        <br>
+                        <small class="text-muted">
+                            <i class="fas fa-lightbulb"></i> Data koreksi Anda akan membantu meningkatkan akurasi sistem
+                        </small>
                     </div>
                 `;
             } else if (type === 'corrected') {
@@ -2754,8 +2758,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         document.getElementById('cancelCorrection').addEventListener('click', function() {
 
-            const aiPrediction = document.getElementById('ai_prediction').value;
-            document.getElementById('kategori').value = aiPrediction;
+            const enginePrediction = document.getElementById('engine_prediction').value;
+            document.getElementById('kategori').value = enginePrediction;
             document.getElementById('is_corrected').value = '0';
             document.getElementById('correction_note').value = '';
             
@@ -2803,7 +2807,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="alert" style="background-color: #fff3e0; border-left: 4px solid #ff9800;">
                         <p class="mb-2">
                             <i class="fas fa-info-circle"></i> 
-                            <strong>Anda telah mengkoreksi hasil AI</strong>
+                            <strong>Anda telah mengkoreksi hasil analisis</strong>
                         </p>
                     </div>
                     <div class="alert" style="background-color: ${categoryColor}22; border-left: 4px solid ${categoryColor};">
@@ -2813,7 +2817,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         ${note ? `<p><strong>Catatan:</strong> ${note}</p>` : ''}
                     </div>
                     <small class="text-muted">
-                        <i class="fas fa-lightbulb"></i> Data koreksi Anda akan membantu meningkatkan akurasi AI
+                        <i class="fas fa-lightbulb"></i> Data koreksi Anda akan membantu meningkatkan akurasi sistem
                     </small>
                 </div>
             `;
@@ -3128,12 +3132,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </div>
                             
                             <div class="preview-section">
-                                <div class="preview-label">🤖 Klasifikasi AI</div>
+                                <div class="preview-label">⚙️ Klasifikasi Otomatis</div>
                                 <div class="preview-value">
                                     <span class="badge bg-${kategori === 'organik' ? 'success' : (kategori === 'anorganik' ? 'primary' : 'danger')} me-2">
                                         ${kategoriDisplay}
                                     </span>
-                                    ${isCorrected === '1' ? '<span class="badge bg-warning">Dikoreksi Manual</span>' : '<span class="badge bg-info">Sesuai AI</span>'}
+                                    ${isCorrected === '1' ? '<span class="badge bg-warning">Dikoreksi Manual</span>' : '<span class="badge bg-info">Sesuai Sistem</span>'}
                                 </div>
                             </div>
                             
@@ -3196,7 +3200,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             if (!aiConfirmed) {
                 e.preventDefault();
-                alert('⚠️ Anda HARUS konfirmasi hasil AI terlebih dahulu!\n\nSetelah upload foto, tunggu analisis AI selesai dan konfirmasi hasilnya.');
+                alert('⚠️ Anda HARUS konfirmasi hasil analisis terlebih dahulu!\n\nSetelah upload foto, tunggu analisis selesai dan konfirmasi hasilnya.');
                 return false;
             }
             

@@ -15,7 +15,7 @@ class Report {
     public $alamat_lokasi;
     public $whatsapp_number; // Nomor WhatsApp user
     public $confidence;
-    public $ai_prediction;
+    public $engine_prediction;
     public $is_corrected;
     public $correction_note;
     public $tags; // Tags untuk analitik
@@ -125,9 +125,9 @@ class Report {
     public function create() {
         $query = "INSERT INTO " . $this->table_name . " 
                   (user_id, guest_name, kategori, jenis_sampah, gambar, deskripsi, lokasi_latitude, lokasi_longitude, 
-                   alamat_lokasi, whatsapp_number, confidence, ai_prediction, is_corrected, correction_note, tags, status, created_at) 
+                   alamat_lokasi, whatsapp_number, confidence, engine_prediction, is_corrected, correction_note, tags, status, created_at) 
                   VALUES (:user_id, :guest_name, :kategori, :jenis_sampah, :gambar, :deskripsi, :lokasi_latitude, 
-                          :lokasi_longitude, :alamat_lokasi, :whatsapp_number, :confidence, :ai_prediction, 
+                          :lokasi_longitude, :alamat_lokasi, :whatsapp_number, :confidence, :engine_prediction, 
                           :is_corrected, :correction_note, :tags, :status, :created_at)";
         
         $stmt = $this->conn->prepare($query);
@@ -144,7 +144,7 @@ class Report {
         $stmt->bindParam(":alamat_lokasi", $this->alamat_lokasi);
         $stmt->bindParam(":whatsapp_number", $this->whatsapp_number);
         $stmt->bindParam(":confidence", $this->confidence);
-        $stmt->bindParam(":ai_prediction", $this->ai_prediction);
+        $stmt->bindParam(":engine_prediction", $this->engine_prediction);
         $stmt->bindParam(":is_corrected", $this->is_corrected);
         $stmt->bindParam(":correction_note", $this->correction_note);
         $stmt->bindParam(":tags", $this->tags);
@@ -230,7 +230,7 @@ class Report {
 
         if ($stmt->execute()) {
 
-            if ($reportData && !empty($reportData['ai_prediction']) && $reportData['ai_prediction'] !== $admin_correction) {
+            if ($reportData && !empty($reportData['engine_prediction']) && $reportData['engine_prediction'] !== $admin_correction) {
 
                 if (!class_exists('CorrectionManager')) {
                     require_once __DIR__ . '/CorrectionManager.php';
@@ -240,7 +240,7 @@ class Report {
                 $sourcePath = UPLOAD_DIR . $reportData['gambar'];
                 
 
-                $cm->saveCorrectedImage($sourcePath, $reportData['ai_prediction'], $admin_correction, $id);
+                $cm->saveCorrectedImage($sourcePath, $reportData['engine_prediction'], $admin_correction, $id);
             }
             return true;
         }
@@ -294,7 +294,7 @@ class Report {
                       lokasi_longitude = :lokasi_longitude,
                       alamat_lokasi = :alamat_lokasi,
                       confidence = :confidence,
-                      ai_prediction = :ai_prediction,
+                      engine_prediction = :engine_prediction,
                       is_corrected = :is_corrected,
                       correction_note = :correction_note
                   WHERE id = :id";
@@ -310,7 +310,7 @@ class Report {
         $stmt->bindParam(":lokasi_longitude", $this->lokasi_longitude);
         $stmt->bindParam(":alamat_lokasi", $this->alamat_lokasi);
         $stmt->bindParam(":confidence", $this->confidence);
-        $stmt->bindParam(":ai_prediction", $this->ai_prediction);
+        $stmt->bindParam(":engine_prediction", $this->engine_prediction);
         $stmt->bindParam(":is_corrected", $this->is_corrected);
         $stmt->bindParam(":correction_note", $this->correction_note);
         $stmt->bindParam(":id", $id);

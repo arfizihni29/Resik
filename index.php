@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $report->status = 'pending';
 
                 $report->confidence = isset($_POST['confidence']) ? floatval($_POST['confidence']) : 0;
-                $report->ai_prediction = isset($_POST['kategori']) ? $_POST['kategori'] : '';
+                $report->engine_prediction = isset($_POST['kategori']) ? $_POST['kategori'] : '';
                 
                 if ($report->create()) {
 
@@ -213,7 +213,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
     <meta name="theme-color" content="#0d9488">
-    <meta name="description" content="Aplikasi Pelaporan Sampah dengan AI - Solusi cerdas untuk lingkungan bersih dan sehat">
+    <meta name="description" content="Sistem Pelaporan Sampah Desa - Solusi cerdas untuk lingkungan bersih dan sehat">
     
     <!-- Performance Optimization -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -290,14 +290,14 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-lg-6 hero-content">
                     <div class="hero-badge fade-in-up">
                         <i class="fas fa-sparkles"></i>
-                        <span>Teknologi KLASIFIKASI AI</span>
+                        <span>Teknologi KLASIFIKASI PINTAR</span>
                     </div>
                     <h1 class="hero-title">
                         Jaga Lingkungan <br>
                         <span>Lebih Cerdas & Mudah</span>
                     </h1>
                     <p class="hero-subtitle">
-                        Platform pelaporan sampah berbasis AI pertama yang menghubungkan masyarakat dengan solusi pengelolaan sampah yang efektif. Deteksi otomatis, lokasi presisi, penanganan cepat.
+                        Platform pelaporan sampah berbasis sistem cerdas pertama yang menghubungkan masyarakat dengan solusi pengelolaan sampah yang efektif. Deteksi otomatis, lokasi presisi, penanganan cepat.
                     </p>
                     <div class="hero-buttons">
 

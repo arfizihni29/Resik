@@ -233,7 +233,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <?php if ($reportData['is_corrected']): ?>
                                         <hr>
                                         <small class="text-muted">
-                                            <i class="fas fa-info-circle"></i> AI Prediksi Awal: <strong><?php echo strtoupper($reportData['ai_prediction']); ?></strong>
+                                            <i class="fas fa-info-circle"></i> Hasil Analisis Awal: <strong><?php echo strtoupper($reportData['engine_prediction']); ?></strong>
                                         </small>
                                     <?php endif; ?>
                                 </div>
@@ -261,7 +261,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="card-body">
                                         <p class="mb-3">
                                             <i class="fas fa-info-circle"></i> 
-                                            Jika AI salah memprediksi, pilih kategori yang benar di bawah ini:
+                                            Jika sistem salah memprediksi, pilih kategori yang benar di bawah ini:
                                         </p>
                                         
                                         <div class="mb-3">
@@ -297,7 +297,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <div class="mb-3">
                                             <label class="form-label fw-bold">Catatan Koreksi:</label>
                                             <textarea class="form-control" name="correction_note" id="correctionNote" 
-                                                      rows="2" placeholder="Mengapa Anda mengkoreksi klasifikasi AI? (opsional)"><?php echo htmlspecialchars($reportData['correction_note']); ?></textarea>
+                                                      rows="2" placeholder="Mengapa Anda mengkoreksi klasifikasi otomatis ini? (opsional)"><?php echo htmlspecialchars($reportData['correction_note']); ?></textarea>
                                             <small class="text-muted">Contoh: "Ini adalah baterai bekas, bukan plastik"</small>
                                         </div>
 
@@ -498,7 +498,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <!-- Footer -->
     <div class="footer">
-        <p>&copy; 2024 Aplikasi Pelaporan Sampah dengan AI | Powered by Teachable Machine</p>
+        <p>&copy; 2024 RESIK - Sistem Manajemen Sampah Desa</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -608,18 +608,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
         <?php if ($reportData['is_corrected']): ?>
-        removeCorrectionBtn.addEventListener('click', function() {
-            if (confirm('Yakin ingin menghapus koreksi dan kembali ke prediksi AI?')) {
+        removeCorrectionBtn.addEventListener('click', async function() {
+            if (confirm('Yakin ingin menghapus koreksi dan kembali ke prediksi sistem?')) {
 
-                const aiPrediction = document.getElementById('aiPrediction').value;
-                kategoriInput.value = aiPrediction;
-                isCorrectedInput.value = '0';
-                document.getElementById('correctionNote').value = '';
+                await fetch('../api/reset_prediction.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'id=' + <?php echo $report_id; ?>
+                });
                 
-                currentCategorySpan.textContent = aiPrediction.toUpperCase();
-                correctedResult.style.display = 'none';
-                
-                alert('Koreksi dihapus! Kategori dikembalikan ke prediksi AI. Jangan lupa klik "Simpan Perubahan".');
+                alert('Koreksi dihapus! Kategori dikembalikan ke hasil analisis otomatis. Jangan lupa klik "Simpan Perubahan".');
             }
         });
         <?php endif; ?>

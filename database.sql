@@ -57,8 +57,8 @@ CREATE TABLE IF NOT EXISTS `reports` (
   `lokasi_longitude` decimal(11,8) NOT NULL,
   `alamat_lokasi` text NOT NULL,
   `whatsapp_number` varchar(20) DEFAULT NULL COMMENT 'Nomor WhatsApp user untuk notifikasi',
-  `confidence` decimal(5,2) DEFAULT NULL COMMENT 'AI confidence score (0-100)',
-  `ai_prediction` enum('organik','anorganik','b3') DEFAULT NULL,
+  `confidence` decimal(5,2) DEFAULT NULL COMMENT 'Engine confidence score (0-100)',
+  `engine_prediction` enum('organik','anorganik','b3') DEFAULT NULL,
   `is_corrected` tinyint(1) DEFAULT 0 COMMENT 'Apakah sudah dikoreksi manual oleh admin',
   `correction_note` text DEFAULT NULL COMMENT 'Catatan koreksi dari admin',
   `tags` varchar(500) DEFAULT NULL COMMENT 'Comma-separated tags untuk analitik',
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `reports` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
-INSERT INTO `reports` (`id`, `user_id`, `kategori`, `jenis_sampah`, `gambar`, `additional_images`, `deskripsi`, `lokasi_latitude`, `lokasi_longitude`, `alamat_lokasi`, `confidence`, `ai_prediction`, `is_corrected`, `correction_note`, `tags`, `status`, `created_at`) VALUES
+INSERT INTO `reports` (`id`, `user_id`, `kategori`, `jenis_sampah`, `gambar`, `additional_images`, `deskripsi`, `lokasi_latitude`, `lokasi_longitude`, `alamat_lokasi`, `confidence`, `engine_prediction`, `is_corrected`, `correction_note`, `tags`, `status`, `created_at`) VALUES
 (1, 2, 'organik', 'botol_plastik', '68fdf681e3ff0_1761474177.jpg', NULL, 'sampah plastik bertebaran', 3.51037600, 98.67981000, 'jl damai no 22', 93.12, 'organik', 1, '', NULL, 'selesai', '2025-10-26 10:22:57'),
 (2, 2, 'anorganik', 'botol_plastik', '68fdf76d45603_1761474413.jpg', NULL, 'sampah botol plastik', 3.51037600, 98.67981000, 'jl damai no 22', 93.12, 'organik', 1, 'ini sampah platik dan botol plastik', NULL, 'selesai', '2025-10-26 10:26:53'),
 (3, 2, 'anorganik', 'botol_plastik', '68fe11ff12d53_1761481215.jpg', NULL, 'kacamata', 3.51037600, 98.67981000, 'jl damai no 11', 99.87, 'organik', 1, 'plastik kacamata', NULL, 'pending', '2025-10-26 11:46:02'),
