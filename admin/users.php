@@ -80,7 +80,7 @@ $totalReports = array_sum(array_column($allUsers, 'report_count'));
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Users - Admin</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -205,7 +205,7 @@ $totalReports = array_sum(array_column($allUsers, 'report_count'));
     <?php include 'includes/navbar.php'; ?>
 
     <div class="container-fluid mt-4 mb-5">
-            <!-- Header -->
+            
             <div class="row align-items-center mb-4">
                 <div class="col-md-8">
                 <h2 class="mb-2" style="color: #14b8a6; font-weight: 700;">
@@ -231,7 +231,7 @@ $totalReports = array_sum(array_column($allUsers, 'report_count'));
         </div>
         <?php endif; ?>
 
-            <!-- Statistics Cards -->
+            
             <div class="row mb-4">
                 <div class="col-6 col-md-3 mb-3">
                 <div class="stat-card mobile-card">
@@ -263,7 +263,7 @@ $totalReports = array_sum(array_column($allUsers, 'report_count'));
                 </div>
             </div>
 
-            <!-- Google OAuth Stats -->
+            
             <?php if ($totalGoogleUsers > 0): ?>
             <div class="row mb-4">
                 <div class="col-12">
@@ -286,7 +286,7 @@ $totalReports = array_sum(array_column($allUsers, 'report_count'));
             </div>
             <?php endif; ?>
 
-            <!-- Search Box -->
+            
         <div class="card mb-4">
                 <div class="card-body">
                     <div class="row align-items-center">
@@ -343,7 +343,7 @@ $totalReports = array_sum(array_column($allUsers, 'report_count'));
                 </div>
             </div>
 
-        <!-- Desktop Table -->
+        
         <div class="card desktop-table">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <div>
@@ -452,7 +452,7 @@ $totalReports = array_sum(array_column($allUsers, 'report_count'));
             </div>
                     </div>
 
-        <!-- Mobile Cards -->
+        
         <div class="mobile-cards">
             <?php foreach ($allUsers as $u): ?>
             <?php 
@@ -531,7 +531,7 @@ $totalReports = array_sum(array_column($allUsers, 'report_count'));
         </div>
     </div>
 
-    <!-- User Detail Modal -->
+    
     <div class="modal fade" id="userModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -544,7 +544,7 @@ $totalReports = array_sum(array_column($allUsers, 'report_count'));
         </div>
     </div>
 
-    <!-- Role Update Modal -->
+    
     <div class="modal fade" id="roleModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -581,7 +581,7 @@ $totalReports = array_sum(array_column($allUsers, 'report_count'));
         </div>
     </div>
 
-    <!-- Location Modal -->
+    
     <div class="modal fade" id="locationModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">

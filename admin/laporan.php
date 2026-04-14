@@ -7,7 +7,7 @@ require_once '../assets/js/jenis-sampah.php';
 checkLogin();
 checkAdmin();
 
-$currentPage = 'laporan'; // For navbar active state
+$currentPage = 'laporan'; 
 
 $database = new Database();
 $db = $database->getConnection();
@@ -42,7 +42,7 @@ if (isset($_POST['update_report'])) {
         $report->ai_prediction = $_POST['ai_prediction'];
         $report->is_corrected = isset($_POST['is_corrected']) ? 1 : 0;
         $report->correction_note = $_POST['correction_note'];
-        $report->gambar = $existingReport['gambar']; // Keep existing image
+        $report->gambar = $existingReport['gambar']; 
         
         if ($report->update($reportId)) {
             $_SESSION['success'] = 'Laporan berhasil diupdate!';
@@ -115,7 +115,7 @@ foreach ($allReportsData as &$reportData) {
         $reportData['is_corrected'] = $isCorrected;
     }
 }
-unset($reportData); // Break reference
+unset($reportData); 
 
 
 $totalReports = count($allReportsData);
@@ -138,7 +138,7 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
     <meta name="theme-color" content="#14b8a6">
     <title>Kelola Laporan - Admin</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -148,7 +148,7 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/vue-components.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- SweetAlert2 -->
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <style>
@@ -331,13 +331,13 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    
     <?php include 'includes/navbar.php'; ?>
 
-    <!-- Content -->
+    
     <div class="container-fluid mt-4 mb-5" id="laporanApp">
         <div class="fade-in">
-            <!-- Header -->
+            
             <div class="row align-items-center mb-4">
                 <div class="col-md-8">
                     <h2 class="mb-2" style="color: #14b8a6; font-weight: 700; font-size: clamp(1.5rem, 5vw, 1.875rem);">
@@ -354,7 +354,7 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
                 </div>
             </div>
 
-            <!-- Statistics Cards (Mobile & Desktop) -->
+            
             <div class="row mb-4">
                 <div class="col-6 col-md-4 col-lg-2 mb-3">
                     <div class="stat-card mobile-card" @click="setFilter('all')" style="cursor: pointer;">
@@ -408,13 +408,13 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
                 </div>
             </div>
 
-            <!-- Search & Filter -->
+            
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-filter"></i> Filter & Pencarian
                 </div>
                 <div class="card-body">
-                        <!-- Search Box -->
+                        
                     <div class="search-box-mobile">
                         <i class="fas fa-search search-icon"></i>
                         <input 
@@ -428,7 +428,7 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
                                 </button>
                             </div>
                     
-                    <!-- Filter Chips -->
+                    
                     <div class="d-flex flex-wrap mb-3">
                         <div 
                             class="filter-chip" 
@@ -500,7 +500,7 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
                 </div>
             </div>
 
-            <!-- Mobile Card View -->
+            
             <div class="d-md-none">
                 <div v-if="filteredReports.length > 0">
                     <div v-for="report in filteredReports" :key="report.id" class="report-card-mobile">
@@ -512,7 +512,7 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
                                 <span class="badge" :class="'badge-' + report.kategori" style="padding: 6px 12px; font-size: 0.75rem;">
                                     {{ report.kategori.toUpperCase() }}
                                 </span>
-                                <!-- Only show "Dikoreksi" label if is_corrected is actually 1 (strict check) -->
+                                
                                 <span v-if="Number(report.is_corrected) === 1" style="font-size: 0.65rem; color: rgb(245, 158, 11); font-weight: 600;">
                                     <i class="fas fa-edit"></i> Dikoreksi
                                 </span>
@@ -578,7 +578,7 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
                 </div>
             </div>
 
-            <!-- Desktop Table View -->
+            
             <div class="card desktop-table">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <span>
@@ -665,7 +665,7 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
                                 </tbody>
                             </table>
                         
-                        <!-- Simple Pagination -->
+                        
                         <div class="d-flex justify-content-between align-items-center mt-3">
                             <small class="text-muted">
                                 Menampilkan {{ (currentPage - 1) * itemsPerPage + 1 }}-{{ Math.min(currentPage * itemsPerPage, filteredReports.length) }} dari {{ filteredReports.length }} laporan
@@ -697,14 +697,14 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
                 </div>
             </div>
             
-            <!-- Pagination handled by Modern Table Component -->
             
-            <!-- Toast Notifications -->
+            
+            
             <toast-notification ref="toast"></toast-notification>
         </div>
     </div>
 
-    <!-- Image Modal -->
+    
     <div class="modal fade" id="imageModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -719,7 +719,7 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
         </div>
     </div>
 
-    <!-- Edit Report Modal -->
+    
     <div class="modal fade" id="editModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -846,7 +846,7 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
         </div>
     </div>
 
-    <!-- Status Update Modal -->
+    
     <div class="modal fade" id="statusModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -891,7 +891,7 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
         </div>
     </div>
 
-    <!-- Footer -->
+    
     <div class="footer">
         <p>&copy; 2024 Aplikasi Pelaporan Sampah dengan AI | Powered by Teachable Machine</p>
     </div>
@@ -899,11 +899,11 @@ $filter = isset($_GET['filter']) ? $_GET['filter'] : 'all';
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/navbar.js"></script>
     
-    <!-- Vue 3 -->
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="../assets/js/vue-components.js"></script>
     
-    <!-- Initialize Vue App -->
+    
     <script>
 
         console.log('🔍 DEBUG Image URLs:');

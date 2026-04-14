@@ -48,7 +48,7 @@ if (isLocalhost()) {
         
 
         if (strpos($host, 'infinityfreeapp.com') !== false || strpos($host, 'resik.infinityfreeapp.com') !== false) {
-            $scriptPath = ''; // File di root
+            $scriptPath = ''; 
         }
         
 
@@ -83,7 +83,7 @@ function getImageUrl($filename) {
 
 
 if (!file_exists(UPLOAD_DIR)) {
-    mkdir(UPLOAD_DIR, 0755, true); // 0755 lebih aman dari 0777
+    mkdir(UPLOAD_DIR, 0755, true); 
 }
 
 

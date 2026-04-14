@@ -1,8 +1,8 @@
 <?php
-/**
- * Google OAuth Callback Handler
- * File ini menangani callback dari Google setelah user authorize
- */
+
+
+
+
 
 require_once '../config/config.php';
 require_once '../config/Database.php';
@@ -110,9 +110,9 @@ if ($existingUser) {
     }
 }
 
-/**
- * Exchange authorization code for access token
- */
+
+
+
 function exchangeCodeForToken($code) {
     $params = [
         'code' => $code,
@@ -140,9 +140,9 @@ function exchangeCodeForToken($code) {
     return json_decode($response, true);
 }
 
-/**
- * Get user info from Google using access token
- */
+
+
+
 function getUserInfoFromGoogle($accessToken) {
     $ch = curl_init(GOOGLE_USERINFO_URL . '?access_token=' . urlencode($accessToken));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -160,9 +160,9 @@ function getUserInfoFromGoogle($accessToken) {
     return json_decode($response, true);
 }
 
-/**
- * Get user by Google ID or Email
- */
+
+
+
 function getUserByGoogleIdOrEmail($db, $googleId, $email) {
 
     $hasGoogleIdColumn = false;
@@ -222,9 +222,9 @@ function getUserByGoogleIdOrEmail($db, $googleId, $email) {
     return null;
 }
 
-/**
- * Create new user from Google info
- */
+
+
+
 function createGoogleUser($db, $userInfo) {
 
     $username = explode('@', $userInfo['email'])[0];
@@ -258,7 +258,7 @@ function createGoogleUser($db, $userInfo) {
     
 
 
-    $defaultLat = '3.5952'; // Medan center
+    $defaultLat = '3.5952'; 
     $defaultLng = '98.6722';
     $defaultAlamat = 'Lokasi belum diatur - Silakan lengkapi di halaman profile';
     
@@ -315,9 +315,9 @@ function createGoogleUser($db, $userInfo) {
     return null;
 }
 
-/**
- * Update Google ID for existing user
- */
+
+
+
 function updateGoogleId($db, $userId, $googleId) {
     $query = "UPDATE users SET google_id = :google_id WHERE id = :id";
     $stmt = $db->prepare($query);
@@ -326,9 +326,9 @@ function updateGoogleId($db, $userId, $googleId) {
     return $stmt->execute();
 }
 
-/**
- * Check if username exists
- */
+
+
+
 function usernameExists($db, $username) {
     $query = "SELECT id FROM users WHERE username = :username LIMIT 1";
     $stmt = $db->prepare($query);
@@ -337,9 +337,9 @@ function usernameExists($db, $username) {
     return $stmt->rowCount() > 0;
 }
 
-/**
- * Get user by ID
- */
+
+
+
 function getUserById($db, $id) {
     $query = "SELECT * FROM users WHERE id = :id LIMIT 1";
     $stmt = $db->prepare($query);

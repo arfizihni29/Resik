@@ -1,10 +1,10 @@
 <?php
-/**
- * CorrectionManager Class
- * 
- * Manages AI correction images for retraining purposes
- * Automatically copies corrected images to organized folders
- */
+
+
+
+
+
+
 class CorrectionManager {
     private $baseDir;
     
@@ -13,15 +13,15 @@ class CorrectionManager {
         $this->baseDir = dirname(__DIR__) . '/uploads/corrections/';
     }
     
-    /**
-     * Copy corrected image to appropriate folder
-     * 
-     * @param string $originalImagePath - Path to original image
-     * @param string $aiPrediction - AI's prediction (organik/anorganik/b3)
-     * @param string $userCorrection - User's correction (organik/anorganik/b3)
-     * @param int $reportId - Report ID for filename
-     * @return bool - Success status
-     */
+    
+
+
+
+
+
+
+
+
     public function saveCorrectedImage($originalImagePath, $aiPrediction, $userCorrection, $reportId) {
 
         if ($aiPrediction === $userCorrection) {
@@ -57,9 +57,9 @@ class CorrectionManager {
         return false;
     }
     
-    /**
-     * Log correction to a text file for reference
-     */
+    
+
+
     private function logCorrection($reportId, $aiPrediction, $userCorrection, $filename) {
         $logFile = $this->baseDir . 'corrections_log.txt';
         $logEntry = sprintf(
@@ -74,9 +74,9 @@ class CorrectionManager {
         file_put_contents($logFile, $logEntry, FILE_APPEND);
     }
     
-    /**
-     * Get statistics of corrections per category
-     */
+    
+
+
     public function getStatistics() {
         $stats = [];
         $categories = ['organik', 'anorganik', 'b3'];
@@ -98,9 +98,9 @@ class CorrectionManager {
         return $stats;
     }
     
-    /**
-     * Get all correction images from a specific category
-     */
+    
+
+
     public function getCorrectionImages($aiPrediction, $userCorrection) {
         $dir = $this->baseDir . "from_{$aiPrediction}/to_{$userCorrection}/";
         
@@ -129,9 +129,9 @@ class CorrectionManager {
         return $images;
     }
     
-    /**
-     * Count total corrections
-     */
+    
+
+
     public function getTotalCorrections() {
         $total = 0;
         $stats = $this->getStatistics();
@@ -143,17 +143,17 @@ class CorrectionManager {
         return $total;
     }
     
-    /**
-     * Get correction path for a specific combination
-     */
+    
+
+
     public function getCorrectionPath($aiPrediction, $userCorrection) {
         return "uploads/corrections/from_{$aiPrediction}/to_{$userCorrection}/";
     }
     
-    /**
-     * Clean old corrections (optional - for maintenance)
-     * Delete corrections older than X days
-     */
+    
+
+
+
     public function cleanOldCorrections($daysOld = 365) {
         $categories = ['organik', 'anorganik', 'b3'];
         $cutoffTime = time() - ($daysOld * 24 * 60 * 60);

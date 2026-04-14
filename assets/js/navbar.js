@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             } else {
                                 navbarCollapse.classList.remove('show');
                             }
-                        }, 150); // Small delay for better UX
+                        }, 150); 
                     }
                 }
             });

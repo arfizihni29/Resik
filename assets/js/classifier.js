@@ -146,7 +146,7 @@ function displayClassificationResult(prediction, reason = '') {
     if (kategoriInput) kategoriInput.value = category;
     if (confidenceInput) confidenceInput.value = (prediction.probability * 100).toFixed(0);
     if (aiPredictionInput) aiPredictionInput.value = category;
-    if (isCorrectionInput) isCorrectionInput.value = '0'; // Reset correction flag
+    if (isCorrectionInput) isCorrectionInput.value = '0'; 
 
     let categoryColor = '#4caf50';
     let categoryIcon = 'leaf';

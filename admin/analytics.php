@@ -517,7 +517,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analytics & Engine Insight - Admin</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -525,10 +525,10 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <!-- Leaflet MarkerCluster -->
+    
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
-    <!-- Leaflet Heatmap -->
+    
     <link rel="stylesheet" href="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.css" />
     <link rel="stylesheet" href="../assets/css/style.css?v=2.0">
     <link rel="stylesheet" href="../assets/css/vue-components.css">
@@ -1741,12 +1741,12 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    
     <?php include 'includes/navbar.php'; ?>
 
-    <!-- Content -->
+    
     <div class="container-fluid mt-4 mb-5" id="analyticsApp">
-        <!-- PDF Header (Only visible when printing) -->
+        
         <div class="pdf-header" style="display: none;">
             <h2>
                 <i class="fas fa-brain" style="color: #14b8a6;"></i>
@@ -1762,7 +1762,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
             </div>
         </div>
         
-        <!-- Header -->
+        
         <div class="row align-items-center mb-4 fade-in no-print">
             <div class="col-md-6">
                 <h2 class="mb-2" style="color: #1f2937; font-weight: 700; font-size: 1.875rem;">
@@ -1832,7 +1832,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
             </div>
         </div>
 
-        <!-- Quick Stats -->
+        
         <div class="row g-3 mb-4">
             <div class="col-xl-3 col-lg-6 col-md-6 fade-in" style="animation-delay: 0.1s;">
                 <div class="compact-card h-100" style="overflow: hidden; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
@@ -1888,9 +1888,9 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
             </div>
         </div>
 
-        <!-- Charts Section -->
+        
         <div class="row g-4 mb-4 no-break">
-            <!-- Monthly Trend Chart -->
+            
             <div class="col-lg-8">
                 <div class="chart-card no-break">
                     <div class="card-header">
@@ -1902,7 +1902,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
                     </div>
                 </div>
             
-            <!-- Category Pie Chart -->
+            
             <div class="col-lg-4">
                 <div class="chart-card no-break">
                     <div class="card-header">
@@ -1915,7 +1915,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
             </div>
         </div>
 
-        <!-- Professional Distribution Map Section -->
+        
         <div class="row mb-4 no-break">
             <div class="col-12">
                 <div class="compact-card no-break" style="overflow: hidden;">
@@ -1929,7 +1929,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
                         </small>
                     </div>
                     <div class="card-body p-0" style="position: relative;">
-                        <!-- Map Controls -->
+                        
                         <div class="map-controls" style="position: absolute; top: 15px; right: 15px; z-index: 1000; display: flex; flex-direction: column; gap: 10px;">
                             <button class="btn btn-sm btn-light shadow-sm" onclick="toggleHeatmap()" style="border: none; font-weight: 600;">
                                 <i class="fas fa-fire me-1"></i>Toggle Heatmap
@@ -1942,7 +1942,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
                             </button>
                         </div>
                         
-                        <!-- Map Legend -->
+                        
                         <div class="map-legend-professional" style="position: absolute; bottom: 20px; left: 20px; z-index: 1000; background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-width: 250px;">
                             <h6 class="mb-3" style="font-weight: 700; color: #1f2937; font-size: 0.95rem;">
                                 <i class="fas fa-legend me-2" style="color: #14b8a6;"></i>Legenda
@@ -1974,7 +1974,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
             </div>
         </div>
 
-        <!-- Hotspots Section -->
+        
         <div class="row mb-4 no-break">
             <div class="col-12">
                 <div class="compact-card no-break">
@@ -2024,9 +2024,9 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
             </div>
         </div>
 
-        <!-- Jenis Sampah Spesifik Section -->
+        
         <div class="row g-4 mb-4 no-break">
-            <!-- Top 10 Jenis Sampah Chart -->
+            
             <div class="col-lg-7">
                 <div class="chart-card no-break">
                     <div class="card-header">
@@ -2042,7 +2042,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
                             </div>
                         </div>
                         
-            <!-- Top Jenis Sampah Table -->
+            
             <div class="col-lg-5">
                 <div class="compact-card h-100 no-break">
                     <div class="card-body">
@@ -2095,7 +2095,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
                     </div>
                 </div>
 
-        <!-- Breakdown per Kategori -->
+        
         <div class="row mb-4 no-break">
             <div class="col-12">
                 <div class="compact-card no-break">
@@ -2104,7 +2104,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
                             <i class="fas fa-layer-group me-2"></i>Breakdown Jenis Sampah per Kategori
                         </h5>
                         <div class="row g-3">
-                            <!-- Organik -->
+                            
                             <div class="col-lg-4">
                                 <div class="card border-success h-100">
                                     <div class="card-header" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border: none;">
@@ -2125,7 +2125,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
             </div>
         </div>
 
-                            <!-- Anorganik -->
+                            
                             <div class="col-lg-4">
                                 <div class="card border-primary h-100">
                                     <div class="card-header" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; border: none;">
@@ -2146,7 +2146,7 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
                                 </div>
                             </div>
                             
-                            <!-- B3 -->
+                            
                             <div class="col-lg-4">
                                 <div class="card border-danger h-100">
                                     <div class="card-header" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; border: none;">
@@ -2172,22 +2172,22 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
             </div>
                         </div>
 
-        <!-- AI Recommendations dengan Dropdown Accordion -->
-        <!-- Recommendations removed as per user request -->
+        
+        
     </div>
     
-        <!-- Footer Note (Hidden in PDF) -->
+        
         <div class="row recommendation-section">
-            <!-- Alert Info removed as per user request -->
+            
         </div>
         
-        <!-- PDF Footer (Only visible when printing) -->
+        
         <div class="pdf-footer" style="display: none;">
             <div>Laporan Analytics - Sistem Pelaporan Sampah Desa | Halaman <span class="page-number"></span></div>
         </div>
     </div>
 
-    <!-- Scripts -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="../assets/js/vue-components.js"></script>
@@ -3010,11 +3010,11 @@ $aiRecommendations = generateAIRecommendations($organikCount, $anorganikCount, $
         }
     </script>
     
-    <!-- Leaflet JS -->
+    
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <!-- Leaflet MarkerCluster -->
+    
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-    <!-- Leaflet Heatmap -->
+    
     <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
 </body>
 </html>

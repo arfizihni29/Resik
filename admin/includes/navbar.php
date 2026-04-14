@@ -19,7 +19,7 @@ if (!isset($currentPage)) {
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <!-- Single Dropdown Menu (Desktop Only) -->
+                
                 <li class="nav-item dropdown d-none d-lg-block">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenu" role="button" 
                        data-bs-toggle="dropdown" aria-expanded="false">
@@ -91,14 +91,14 @@ if (!isset($currentPage)) {
                     </ul>
                 </li>
                 
-                <!-- Admin Name (Desktop) -->
+                
                 <li class="nav-item d-none d-lg-block">
                     <span class="nav-link">
                         <i class="fas fa-user-shield"></i> <?php echo isset($_SESSION['nama']) ? $_SESSION['nama'] : 'Administrator'; ?>
                     </span>
                 </li>
                 
-                <!-- Mobile Menu (Compact List) -->
+                
                 <li class="nav-item d-lg-none w-100">
                     <div class="mobile-menu-container">
                         <div class="mobile-menu-header">

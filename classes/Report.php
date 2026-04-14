@@ -4,8 +4,8 @@ class Report {
     private $table_name = "reports";
 
     public $id;
-    public $user_id; // Nullable for guest
-    public $guest_name; // For guest reporting
+    public $user_id; 
+    public $guest_name; 
     public $kategori;
     public $jenis_sampah;
     public $gambar;
@@ -13,12 +13,12 @@ class Report {
     public $lokasi_latitude;
     public $lokasi_longitude;
     public $alamat_lokasi;
-    public $whatsapp_number; // Nomor WhatsApp user
+    public $whatsapp_number; 
     public $confidence;
     public $engine_prediction;
     public $is_corrected;
     public $correction_note;
-    public $tags; // Tags untuk analitik
+    public $tags; 
     public $status;
     public $created_at;
     public $admin_correction;
@@ -30,9 +30,9 @@ class Report {
         $this->ensureColumnsExist();
     }
 
-    /**
-     * Auto-create missing columns jika belum ada
-     */
+    
+
+
     private function ensureColumnsExist() {
         try {
 
@@ -223,7 +223,7 @@ class Report {
                   WHERE id = :id";
         
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(":category", $admin_correction); // Update actual category too
+        $stmt->bindParam(":category", $admin_correction); 
         $stmt->bindParam(":correction", $admin_correction);
         $stmt->bindParam(":feedback", $admin_feedback);
         $stmt->bindParam(":id", $id);

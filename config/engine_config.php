@@ -3,7 +3,7 @@
 define('ENGINE_PROVIDER', 'engine_v1');
 define('ENGINE_BASE_URL', 'https://generativelanguage.googleapis.com/v1beta/models');
 
-define('ENGINE_KEY', $_ENV['ENGINE_DEFAULT_KEY'] ?? 'KEY_FALLBACK'); // Default/Fallback Key
+define('ENGINE_KEY', $_ENV['ENGINE_DEFAULT_KEY'] ?? 'KEY_FALLBACK'); 
 
 $envKeys = [];
 for ($i = 1; $i <= 10; $i++) {
@@ -12,7 +12,7 @@ for ($i = 1; $i <= 10; $i++) {
     }
 }
 
-// Fallback jika envKeys kosong
+
 if (empty($envKeys)) {
     $envKeys = [$_ENV['ENGINE_DEFAULT_KEY'] ?? 'KEY_UNDEFINED'];
 }

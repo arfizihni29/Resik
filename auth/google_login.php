@@ -1,8 +1,8 @@
 <?php
-/**
- * Google OAuth Login Initiator
- * File ini menginisiasi proses login dengan Google
- */
+
+
+
+
 
 require_once '../config/config.php';
 require_once '../config/google_config.php';

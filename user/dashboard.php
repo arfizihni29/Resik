@@ -64,7 +64,7 @@ foreach ($userReports as $r) {
     <meta name="theme-color" content="#14b8a6">
     <title>Dashboard - Pelaporan Sampah</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -386,7 +386,7 @@ foreach ($userReports as $r) {
 </nav>
 
 <div class="container py-4">
-    <!-- Welcome Hero -->
+    
     <div class="dashboard-hero">
         <div class="floating-shape shape-1"></div>
         <div class="floating-shape shape-2"></div>
@@ -403,7 +403,7 @@ foreach ($userReports as $r) {
                 </div>
             </div>
             <div class="col-md-4 text-end d-none d-md-block">
-                <!-- Fallback abstract visual if image missing -->
+                
                 <div style="font-size: 8rem; color: rgba(255,255,255,0.2);">
                     <i class="fas fa-leaf"></i>
                 </div>
@@ -411,7 +411,7 @@ foreach ($userReports as $r) {
         </div>
     </div>
 
-    <!-- Stats Grid -->
+    
     <div class="row g-4 mb-5">
         <div class="col-6 col-md-3">
             <div class="stat-card-modern">
@@ -451,7 +451,7 @@ foreach ($userReports as $r) {
         </div>
     </div>
 
-    <!-- Quick Action -->
+    
     <div class="action-card">
         <div class="mb-4">
             <div style="width: 80px; height: 80px; background: #ccfbf1; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; color: #0f766e; font-size: 2rem;">
@@ -465,7 +465,7 @@ foreach ($userReports as $r) {
         </a>
     </div>
 
-    <!-- Recent Reports -->
+    
     <div class="table-container">
         <div class="section-header">
             <h2 class="section-title">Riwayat Laporan Anda</h2>

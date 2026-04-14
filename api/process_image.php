@@ -49,13 +49,13 @@ foreach ($keysData as $index => $k) {
 
         $keysData[$index]['status'] = 'active';
         $keysData[$index]['limit_reset_at'] = 0;
-        $k['status'] = 'active'; // Update local var for immediate use
+        $k['status'] = 'active'; 
     }
 
     if ($k['status'] === 'active') {
         $activeKeys[] = [
             'key' => $k['key'],
-            'index' => $index // Keep track of original index to update JSON later
+            'index' => $index 
         ];
     }
 }
@@ -103,18 +103,18 @@ $payload = [
             'parts' => [
                 ['text' => ENGINE_SYSTEM_PROMPT],
                 [
-                    'inlineData' => [  // camelCase
-                        'mimeType' => 'image/jpeg', // camelCase
+                    'inlineData' => [  
+                        'mimeType' => 'image/jpeg', 
                         'data' => $imageBase64
                     ]
                 ]
             ]
         ]
     ],
-    'generationConfig' => [ // camelCase
+    'generationConfig' => [ 
         'maxOutputTokens' => 2000,
         'temperature' => 0.4,
-        'responseMimeType' => 'application/json' // camelCase
+        'responseMimeType' => 'application/json' 
     ]
 ];
 
@@ -145,14 +145,14 @@ foreach ($activeKeys as $keyInfo) {
 
     if ($httpCode === 200) {
         $successKeyIndex = $originalIndex;
-        break; // Success!
+        break; 
     }
     
 
     if ($httpCode === 429 && $originalIndex >= 0) {
 
         $keysData[$originalIndex]['status'] = 'rate_limited';
-        $keysData[$originalIndex]['limit_reset_at'] = time() + 300; // 5 Minute Cooldown (Prevent rapid retries)
+        $keysData[$originalIndex]['limit_reset_at'] = time() + 300; 
         $keysData[$originalIndex]['error_count']++;
         
 
@@ -162,7 +162,7 @@ foreach ($activeKeys as $keyInfo) {
     }
     
     if ($httpCode === 503) {
-        continue; // Server overload, try next key
+        continue; 
     }
     
 
@@ -232,10 +232,10 @@ if (!$jsonResult) {
 
 
 $finalResult = [
-    'category' => $jsonResult['category'] ?? 'anorganik', // Default fallback
-    'item_name' => $jsonResult['item_name'] ?? '', // Specific item name
+    'category' => $jsonResult['category'] ?? 'anorganik', 
+    'item_name' => $jsonResult['item_name'] ?? '', 
     'confidence' => $jsonResult['confidence'] ?? 0.8,
-    'objects' => $jsonResult['objects'] ?? [], // New field
+    'objects' => $jsonResult['objects'] ?? [], 
     'reason' => $jsonResult['reason'] ?? 'Analysis completed (Auto-parsed)'
 ];
 
@@ -248,7 +248,7 @@ $anorganikKeywords = ['besi', 'baja', 'logam', 'stainless', 'aluminium', 'kaca',
 foreach ($anorganikKeywords as $keyword) {
     if (strpos($itemLower, $keyword) !== false) {
         $finalResult['category'] = 'anorganik';
-        break; // Stop after first match
+        break; 
     }
 }
 

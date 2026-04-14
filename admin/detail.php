@@ -8,7 +8,7 @@ require_once '../assets/js/jenis-sampah.php';
 checkLogin();
 checkAdmin();
 
-$currentPage = 'detail'; // For navbar active state
+$currentPage = 'detail'; 
 
 $database = new Database();
 $db = $database->getConnection();
@@ -132,7 +132,7 @@ $reportComments = $comment->getByReportId($id);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Laporan - Admin</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -141,14 +141,14 @@ $reportComments = $comment->getByReportId($id);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- SweetAlert2 -->
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <!-- Navbar -->
+    
     <?php include 'includes/navbar.php'; ?>
 
-    <!-- Content -->
+    
     <div class="container mt-4 mb-5">
         <?php if (isset($success)): ?>
             <div class="alert alert-success alert-dismissible fade show">
@@ -170,7 +170,7 @@ $reportComments = $comment->getByReportId($id);
                         <i class="fas fa-file-alt"></i> Detail Laporan #<?php echo $reportData['id']; ?>
                     </div>
                     <div class="card-body">
-                        <!-- Image -->
+                        
                         <div class="text-center mb-4">
                             <img src="<?php echo getImageUrl($reportData['gambar']); ?>" 
                                  alt="Sampah" 
@@ -179,10 +179,10 @@ $reportComments = $comment->getByReportId($id);
                                  onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNGM0Y0RjYiLz48cGF0aCBkPSJNMTgwIDE2MEgyMjBWMjAwSDE4MFYxNjBaTTE4MCAyNDBIMjIwVjI4MEgxODBWMjQwWk0xODAgMzIwSDIyMFYzNjBIMTgwVjMyMFoiIGZpbGw9IiM5Q0EzQUYiLz48L3N2Zz4='; this.style.border='2px solid #e5e7eb';">
                         </div>
 
-                        <!-- Classification Info -->
+                        
                         <div class="classification-result mb-4">
                             <?php if (!empty($reportData['admin_correction'])): ?>
-                                <!-- Show Admin Correction -->
+                                
                                 <h5><i class="fas fa-check-double"></i> Hasil Koreksi Admin</h5>
                                 <div class="alert" style="background-color: #d1fae5; border-left: 4px solid #10b981;">
                                     <p class="mb-0">
@@ -201,7 +201,7 @@ $reportComments = $comment->getByReportId($id);
                                     <?php endif; ?>
                                 </div>
                             <?php elseif (isset($reportData['is_corrected']) && $reportData['is_corrected']): ?>
-                                <!-- Show correction info -->
+                                
                                 <h5><i class="fas fa-user-edit"></i> Hasil Setelah Koreksi Manual oleh User</h5>
                                 <div class="alert" style="background-color: #fff3e0; border-left: 4px solid #ff9800;">
                                     <p class="mb-0">
@@ -257,7 +257,7 @@ $reportComments = $comment->getByReportId($id);
                             </div>
                         </div>
 
-                        <!-- Jenis Sampah Detail -->
+                        
                         <?php if (isset($reportData['jenis_sampah'])): ?>
                             <?php $jenisInfo = getJenisSampahInfo($reportData['jenis_sampah']); ?>
                             <div class="mb-4">
@@ -270,7 +270,7 @@ $reportComments = $comment->getByReportId($id);
                             </div>
                         <?php endif; ?>
                         
-                        <!-- AI Confidence -->
+                        
                         <?php if (isset($reportData['confidence'])): ?>
                             <div class="mb-4">
                                 <h6><i class="fas fa-chart-bar"></i> Keyakinan AI</h6>
@@ -286,7 +286,7 @@ $reportComments = $comment->getByReportId($id);
                             </div>
                         <?php endif; ?>
 
-                        <!-- User Info -->
+                        
                         <div class="mb-4">
                             <h6><i class="fas fa-user"></i> Pelapor</h6>
                             <p>
@@ -316,7 +316,7 @@ $reportComments = $comment->getByReportId($id);
                             </p>
                         </div>
 
-                        <!-- Description -->
+                        
                         <?php if ($reportData['deskripsi']): ?>
                             <div class="mb-4">
                                 <h6><i class="fas fa-edit"></i> Deskripsi</h6>
@@ -324,7 +324,7 @@ $reportComments = $comment->getByReportId($id);
                             </div>
                         <?php endif; ?>
 
-                        <!-- Tags -->
+                        
                         <?php if (!empty($reportData['tags'])): ?>
                             <div class="mb-4">
                                 <h6><i class="fas fa-tags"></i> Tags</h6>
@@ -346,7 +346,7 @@ $reportComments = $comment->getByReportId($id);
                             </div>
                         <?php endif; ?>
 
-                        <!-- Location -->
+                        
                         <div class="mb-4">
                             <h6><i class="fas fa-map-marker-alt"></i> Lokasi</h6>
                             <p><?php echo htmlspecialchars($reportData['alamat_lokasi']); ?></p>
@@ -359,7 +359,7 @@ $reportComments = $comment->getByReportId($id);
                             <div id="detailMap" style="height: 300px; border-radius: 10px;"></div>
                         </div>
 
-                        <!-- Action Buttons -->
+                        
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                             <a href="laporan.php" class="btn btn-outline-secondary">
                                 <i class="fas fa-arrow-left"></i> Kembali
@@ -373,7 +373,7 @@ $reportComments = $comment->getByReportId($id);
             </div>
 
             <div class="col-lg-4">
-                <!-- Status Card -->
+                
                 <div class="card mb-3 fade-in">
                     <div class="card-header">
                         <i class="fas fa-edit"></i> Update Status
@@ -402,7 +402,7 @@ $reportComments = $comment->getByReportId($id);
                             </button>
                         </form>
                         
-                        <!-- Reject Button -->
+                        
                         <?php if ($reportData['status'] != 'ditolak'): ?>
                         <hr>
                         <button type="button" class="btn btn-danger w-100" data-bs-toggle="modal" data-bs-target="#rejectModal">
@@ -412,7 +412,7 @@ $reportComments = $comment->getByReportId($id);
                     </div>
                 </div>
 
-                <!-- Admin Correction Card -->
+                
                 <div class="card mb-3 fade-in" style="border-left: 4px solid #f59e0b;">
                     <div class="card-header bg-warning text-dark">
                         <i class="fas fa-user-check"></i> Koreksi Admin
@@ -444,7 +444,7 @@ $reportComments = $comment->getByReportId($id);
                     </div>
                 </div>
 
-                <!-- Rejection Reason Display -->
+                
                 <?php if ($reportData['status'] == 'ditolak' && !empty($reportData['rejection_reason'])): ?>
                 <div class="card mb-3 fade-in" style="border-left: 4px solid #ef4444;">
                     <div class="card-header bg-danger text-white">
@@ -459,7 +459,7 @@ $reportComments = $comment->getByReportId($id);
                 </div>
                 <?php endif; ?>
 
-                <!-- Info Card -->
+                
                 <div class="card mb-3 fade-in">
                     <div class="card-header">
                         <i class="fas fa-info-circle"></i> Informasi Laporan
@@ -494,7 +494,7 @@ $reportComments = $comment->getByReportId($id);
                     </div>
                 </div>
 
-                <!-- Status Timeline -->
+                
                 <div class="card mb-3 fade-in">
                     <div class="card-header">
                         <i class="fas fa-tasks"></i> Status Pemrosesan
@@ -526,14 +526,14 @@ $reportComments = $comment->getByReportId($id);
                     </div>
                 </div>
 
-                <!-- Komentar Admin -->
+                
                 <div class="card fade-in">
                     <div class="card-header">
                         <i class="fas fa-comments"></i> Komentar Admin
                         <span class="badge bg-primary ms-2"><?php echo count($reportComments); ?></span>
                     </div>
                     <div class="card-body">
-                        <!-- Form Tambah Komentar -->
+                        
                         <form method="POST" class="mb-4">
                             <div class="mb-3">
                                 <label for="comment_text" class="form-label"><strong>Tambah Komentar:</strong></label>
@@ -554,7 +554,7 @@ $reportComments = $comment->getByReportId($id);
 
                         <hr>
 
-                        <!-- Daftar Komentar -->
+                        
                         <div class="comments-list">
                             <?php if (count($reportComments) > 0): ?>
                                 <?php foreach ($reportComments as $commentItem): ?>
@@ -596,7 +596,7 @@ $reportComments = $comment->getByReportId($id);
         </div>
     </div>
 
-    <!-- Reject Modal -->
+    
     <div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="rejectModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -640,7 +640,7 @@ $reportComments = $comment->getByReportId($id);
         </div>
     </div>
 
-    <!-- Footer -->
+    
     <div class="footer">
         <p>&copy; 2024 Aplikasi Pelaporan Sampah dengan AI | Powered by Teachable Machine</p>
     </div>
@@ -664,7 +664,7 @@ $reportComments = $comment->getByReportId($id);
             .openPopup();
     </script>
 
-    <!-- Delete Confirmation Script -->
+    
     <script>
         function confirmDelete(reportId) {
             Swal.fire({

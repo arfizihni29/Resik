@@ -580,7 +580,7 @@ const VueComponents = {
         props: {
             type: {
                 type: String,
-                default: 'card' // card, text, avatar, image
+                default: 'card' 
             },
             count: {
                 type: Number,

@@ -7,7 +7,7 @@ require_once '../assets/js/jenis-sampah.php';
 checkLogin();
 checkAdmin();
 
-$currentPage = 'dashboard'; // For navbar active state
+$currentPage = 'dashboard'; 
 
 $database = new Database();
 $db = $database->getConnection();
@@ -26,7 +26,7 @@ $allReports = $report->getAllReports();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Admin - Pelaporan Sampah</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -35,7 +35,7 @@ $allReports = $report->getAllReports();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/vue-components.css">
-    <!-- Google Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -143,12 +143,12 @@ $allReports = $report->getAllReports();
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    
     <?php include 'includes/navbar.php'; ?>
 
-    <!-- Content -->
+    
     <div class="container-fluid mt-4 mb-5" id="dashboardApp">
-        <!-- Header -->
+        
         <div class="row align-items-center mb-4 fade-in">
             <div class="col-md-8">
                 <h2 class="mb-2" style="font-weight: 800; letter-spacing: -0.025em;">
@@ -187,7 +187,7 @@ $allReports = $report->getAllReports();
             </div>
         </div>
 
-        <!-- Statistics Cards - Direct Render -->
+        
         <div class="row mb-4">
             <div class="col-xl-3 col-md-6 mb-3" style="animation-delay: 0.1s;">
                 <div class="stat-card stat-card-primary visible">
@@ -235,7 +235,7 @@ $allReports = $report->getAllReports();
             </div>
         </div>
 
-        <!-- Category Statistics -->
+        
         <div class="row mb-4">
             <div class="col-md-4 mb-3 fade-in" style="animation-delay: 0.5s;">
                 <div class="card h-100 border-0 shadow-sm">
@@ -287,7 +287,7 @@ $allReports = $report->getAllReports();
             </div>
         </div>
 
-        <!-- Recent Reports with Vue Data Table -->
+        
         <div class="card fade-in border-0 shadow-sm" style="animation-delay: 0.8s;">
             <div class="card-header d-flex justify-content-between align-items-center bg-white border-bottom-0 pt-4 px-4 pb-2">
                 <span class="h5 mb-0 fw-bold text-dark">
@@ -366,7 +366,7 @@ $allReports = $report->getAllReports();
                         </template>
                     </data-table>
                     
-                    <!-- Pagination Controls -->
+                    
                     <div class="d-flex justify-content-between align-items-center mt-4 mb-3">
                         <div class="text-muted">
                             <small>{{ paginationInfo }}</small>
@@ -431,11 +431,11 @@ $allReports = $report->getAllReports();
             </div>
         </div>
         
-        <!-- Toast Notifications -->
+        
         <toast-notification ref="toast"></toast-notification>
     </div>
 
-    <!-- Footer -->
+    
     <div class="footer text-center py-4 text-muted small">
         <p>&copy; 2024 Sistem Pelaporan Sampah Cerdas | Powered by <a href="#" class="text-decoration-none" style="color: #0d9488;">Teachable Machine</a></p>
     </div>
@@ -443,11 +443,11 @@ $allReports = $report->getAllReports();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/navbar.js"></script>
     
-    <!-- Vue 3 -->
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="../assets/js/vue-components.js"></script>
     
-    <!-- Initialize Vue App -->
+    
     <script>
         const { createApp } = Vue;
         
@@ -607,7 +607,7 @@ $allReports = $report->getAllReports();
         updateClockAdmin();
     </script>
     
-    <!-- Additional Styles for Avatar Circle -->
+    
     <style>
         .avatar-circle {
             width: 40px;

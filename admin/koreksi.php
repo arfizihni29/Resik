@@ -7,7 +7,7 @@ require_once '../assets/js/jenis-sampah.php';
 checkLogin();
 checkAdmin();
 
-$currentPage = 'koreksi'; // For navbar active state
+$currentPage = 'koreksi'; 
 
 $database = new Database();
 $db = $database->getConnection();
@@ -66,7 +66,7 @@ $errorRate = $totalCorrected > 0 ? round((($totalCorrected - $accurateCount) / $
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Terkoreksi - Admin</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -76,17 +76,17 @@ $errorRate = $totalCorrected > 0 ? round((($totalCorrected - $accurateCount) / $
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <!-- Navbar -->
+    
     <?php include 'includes/navbar.php'; ?>
 
-    <!-- Content -->
+    
     <div class="container-fluid mt-4 mb-5">
         <div class="fade-in">
             <h2 class="mb-4" style="color: var(--primary-green);">
                 <i class="fas fa-edit"></i> Laporan yang Dikoreksi User
             </h2>
 
-            <!-- Alert Info -->
+            
             <div class="alert" style="background-color: #fff3e0; border-left: 4px solid #ff9800;">
                 <h5 style="color: #f57c00; margin-bottom: 10px;">
                     <i class="fas fa-info-circle"></i> Tentang Halaman Ini
@@ -97,7 +97,7 @@ $errorRate = $totalCorrected > 0 ? round((($totalCorrected - $accurateCount) / $
                 </p>
             </div>
 
-            <!-- Statistics Cards -->
+            
             <div class="row mb-4">
                 <div class="col-md-3 mb-3">
                     <div class="stat-card">
@@ -129,7 +129,7 @@ $errorRate = $totalCorrected > 0 ? round((($totalCorrected - $accurateCount) / $
                 </div>
             </div>
 
-            <!-- AI Prediction Error Analysis -->
+            
             <div class="row mb-4">
                 <div class="col-md-4 mb-3">
                     <div class="card">
@@ -163,7 +163,7 @@ $errorRate = $totalCorrected > 0 ? round((($totalCorrected - $accurateCount) / $
                 </div>
             </div>
 
-            <!-- Filter -->
+            
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="row align-items-center">
@@ -190,7 +190,7 @@ $errorRate = $totalCorrected > 0 ? round((($totalCorrected - $accurateCount) / $
                 </div>
             </div>
 
-            <!-- Corrected Reports Table -->
+            
             <div class="card">
                 <div class="card-header">
                     <i class="fas fa-table"></i> Daftar Laporan Terkoreksi (<?php echo count($correctedReports); ?> laporan)
@@ -306,7 +306,7 @@ $errorRate = $totalCorrected > 0 ? round((($totalCorrected - $accurateCount) / $
                 </div>
             </div>
 
-            <!-- Analysis Section -->
+            
             <?php if ($totalCorrected > 0): ?>
                 <div class="card mt-4">
                     <div class="card-header" style="background: var(--light-green); color: white;">
@@ -349,7 +349,7 @@ $errorRate = $totalCorrected > 0 ? round((($totalCorrected - $accurateCount) / $
         </div>
     </div>
 
-    <!-- Image Modal -->
+    
     <div class="modal fade" id="imageModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -364,7 +364,7 @@ $errorRate = $totalCorrected > 0 ? round((($totalCorrected - $accurateCount) / $
         </div>
     </div>
 
-    <!-- Note Modal -->
+    
     <div class="modal fade" id="noteModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -381,7 +381,7 @@ $errorRate = $totalCorrected > 0 ? round((($totalCorrected - $accurateCount) / $
         </div>
     </div>
 
-    <!-- Footer -->
+    
     <div class="footer">
         <p>&copy; 2024 Aplikasi Pelaporan Sampah dengan AI | Powered by Teachable Machine</p>
     </div>

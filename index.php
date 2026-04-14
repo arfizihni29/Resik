@@ -134,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (empty($register_error)) {
             if (!empty($guest_name) && !empty($guest_contact) && !empty($gambar)) {
                 $report = new Report($db);
-                $report->user_id = null; // Guest user
+                $report->user_id = null; 
                 $report->guest_name = $guest_name;
                 $report->whatsapp_number = $guest_contact;
                 $report->kategori = $kategori;
@@ -215,32 +215,32 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
     <meta name="theme-color" content="#0d9488">
     <meta name="description" content="Sistem Pelaporan Sampah Desa - Solusi cerdas untuk lingkungan bersih dan sehat">
     
-    <!-- Performance Optimization -->
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <title>Lapor Sampah - Solusi Lingkungan Cerdas</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="logo.jpg">
     <link rel="alternate icon" href="favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="favicon.svg">
     
-    <!-- CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Fonts -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Leaflet CSS -->
+    
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     
     <link rel="stylesheet" href="assets/css/landing-premium.css">
 </head>
 <body>
-    <!-- Navbar -->
+    
     <nav class="landing-navbar navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.php">
@@ -280,7 +280,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    
     <section class="hero-section">
         <div class="hero-blob hero-blob-1"></div>
         <div class="hero-blob hero-blob-2"></div>
@@ -308,10 +308,10 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="col-lg-6 mt-5 mt-lg-0 text-center">
                     <div class="hero-image-wrapper">
-                        <!-- Simulated 3D Elements -->
+                        
 
 
-                        <!-- Main Illustration -->
+                        
                         <img src="assets/img/hero-illustration.svg" alt="" class="img-fluid position-relative" style="z-index: 1; max-height: 400px; filter: drop-shadow(0 20px 40px rgba(13,148,136,0.15));" onerror="this.src=''">
                     </div>
                 </div>
@@ -319,7 +319,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </section>
 
-    <!-- Stats Section (New Requirement) -->
+    
     <div class="container" id="stats">
         <div class="stats-container">
             <div class="row">
@@ -363,7 +363,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <!-- Features Section -->
+    
     <section class="section-padding" id="features">
         <div class="container">
             <div class="section-header">
@@ -410,7 +410,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </section>
 
-    <!-- Map Section -->
+    
     <section class="section-padding map-section" id="map">
         <div class="container">
             <div class="row align-items-center mb-5">
@@ -432,7 +432,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </section>
 
-    <!-- Footer -->
+    
     <footer class="footer text-white">
         <div class="container">
             <div class="row">
@@ -482,11 +482,11 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </footer>
 
-    <!-- Login Modal (Redesigned) -->
+    
     <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <!-- Decorative Blobs -->
+                
                 <div class="modal-decoration-blob blob-1"></div>
                 <div class="modal-decoration-blob blob-2"></div>
 
@@ -541,11 +541,11 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <!-- Register Modal (Redesigned) -->
+    
     <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
-                <!-- Decorative Blobs -->
+                
                 <div class="modal-decoration-blob blob-1"></div>
                 <div class="modal-decoration-blob blob-2" style="bottom: 0; left: 0;"></div>
 
@@ -613,7 +613,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                             <label for="regAlamat">Alamat Lengkap</label>
                         </div>
                         
-                        <!-- Map Decor Card -->
+                        
                         <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden position-relative">
                             <div class="card-body p-0">
                                 <div class="position-absolute top-0 start-0 w-100 p-3 d-flex justify-content-between align-items-center" style="z-index: 400; background: linear-gradient(to bottom, rgba(255,255,255,0.9), transparent); pointer-events: none;">
@@ -647,7 +647,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 
-    <!-- Quick Report Modal (Premium AI Version) -->
+    
     <div class="modal fade" id="quickReportModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content overflow-hidden border-0">
@@ -664,7 +664,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                     <button type="button" class="btn-close bg-light rounded-circle p-2" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-4 p-lg-5 pt-4">
-                    <!-- Alerts -->
+                    
                     <div id="quickReportAlerts">
                         <?php if($register_error): ?>
                             <div class="alert alert-danger border-0 rounded-3 small mb-3">
@@ -683,7 +683,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                         <input type="hidden" name="action" value="guest_report">
                         
                         <div class="row g-5">
-                            <!-- Left Column: Upload & Status -->
+                            
                             <div class="col-lg-5">
                                 <div class="mb-4 position-relative">
                                     <span class="badge bg-primary rounded-pill mb-2 px-3 py-2">Langkah 1</span>
@@ -691,7 +691,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                                     <div class="upload-zone text-center p-5 position-relative hover-lift overflow-hidden rounded-4" id="uploadZone" style="min-height: 400px; display: flex; align-items: center; justify-content: center;">
                                         <input type="file" name="gambar" id="guestImageInput" class="d-none" accept="image/*" required>
                                         
-                                        <!-- Placeholder -->
+                                        
                                         <div class="upload-content py-4">
                                             <div class="bg-white rounded-circle shadow-sm d-inline-flex p-4 mb-3">
                                                 <i class="fas fa-camera text-primary display-6"></i>
@@ -700,19 +700,19 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                                             <small class="text-muted">atau klik untuk mengambil foto</small>
                                         </div>
                                         
-                                        <!-- Preview Image -->
+                                        
                                         <img id="imagePreview" src="#" alt="Preview" class="w-100 h-100 position-absolute top-0 start-0 shadow-sm" style="display: none; object-fit: cover; z-index: 10;">
                                         
-                                        <!-- Scanning Effect -->
+                                        
                                         <div class="scanning-line" id="scanningLine"></div>
                                         <div class="ai-pulse" id="aiPulse"></div>
                                     </div>
                                 </div>
                                 
-                                <!-- AI Status Card (Left) -->
+                                
                                 <div id="aiResult" class="d-none fade-in-up">
                                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden position-relative">
-                                        <!-- Result Content -->
+                                        
                                         <div id="aiResultContent" class="position-relative z-1">
                                             <div class="card-body p-4 text-center">
                                                 <div id="aiIconWrapper" class="mb-3 d-inline-block"></div>
@@ -721,7 +721,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                                             </div>
                                         </div>
                                         
-                                        <!-- Scanning State -->
+                                        
                                         <div id="aiScanningState" class="d-none">
                                             <div class="card-body p-4 text-center">
                                                 <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;"></div>
@@ -733,12 +733,12 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                                 </div>
                             </div>
 
-                            <!-- Right Column: Details -->
+                            
                             <div class="col-lg-7">
                                 <span class="badge bg-secondary rounded-pill mb-2 px-3 py-2">Langkah 2</span>
                                 <h6 class="fw-bold mb-4">Lengkapi Data Laporan</h6>
 
-                                <!-- Personal Data -->
+                                
                                 <div class="row g-3 mb-4">
                                     <div class="col-md-6">
                                         <div class="form-floating">
@@ -754,7 +754,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                                     </div>
                                 </div>
                                 
-                                <!-- Location -->
+                                
                                 <div class="mb-4">
                                     <label class="form-label fw-bold small text-muted mb-2">LOKASI KEJADIAN</label>
                                     <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-3">
@@ -773,7 +773,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                                     <input type="hidden" name="longitude" id="guest_longitude">
                                 </div>
 
-                                <!-- Hidden AI Inputs -->
+                                
                                 <input type="hidden" name="kategori" id="guestKategori">
                                     <div class="form-floating mb-3">
                                         <input type="text" class="form-control" name="jenis_sampah" id="guestJenisSampah" placeholder="Jenis Sampah" required>
@@ -782,7 +782,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
                                 <input type="hidden" name="deskripsi" id="guestDeskripsi">
                                 <input type="hidden" name="confidence" id="guestConfidenceInput">
 
-                                <!-- AI Detailed Result (Right) -->
+                                
                                 <div id="aiDetails" class="card bg-teal-50 border-0 mb-4 rounded-4 d-none">
                                     <div class="card-body p-4">
                                         <div class="d-flex align-items-center mb-3">
@@ -824,8 +824,8 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
     
-    <!-- Scripts -->
-    <!-- SweetAlert2 -->
+    
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -1472,7 +1472,7 @@ $recentReports = $stmtRecent->fetchAll(PDO::FETCH_ASSOC);
             }
         });
     </script>
-    <!-- AI Classifier Logic -->
+    
     <script src="assets/js/classifier.js"></script>
 </body>
 </html>

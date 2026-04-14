@@ -185,7 +185,7 @@ $needsMigration = !$usersTableExists || !$reportsTableExists ||
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Database Migration - Admin</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -251,7 +251,7 @@ $needsMigration = !$usersTableExists || !$reportsTableExists ||
         </div>
         <?php endif; ?>
 
-        <!-- Database Status Overview -->
+        
         <div class="row mb-4">
             <div class="col-md-6 mb-3">
                 <div class="card border-0 shadow-sm">
@@ -324,7 +324,7 @@ $needsMigration = !$usersTableExists || !$reportsTableExists ||
             </div>
         </div>
 
-        <!-- Migration Actions -->
+        
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm migration-card">
@@ -362,7 +362,7 @@ $needsMigration = !$usersTableExists || !$reportsTableExists ||
             </div>
         </div>
 
-        <!-- Migration Details -->
+        
         <div class="row">
             <div class="col-12">
                 <div class="card border-0 shadow-sm">
@@ -506,7 +506,7 @@ $needsMigration = !$usersTableExists || !$reportsTableExists ||
             </div>
         </div>
 
-        <!-- Info -->
+        
         <div class="row mt-4">
             <div class="col-12">
                 <div class="alert alert-info">

@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['username'] = $user->username;
             $_SESSION['nama'] = $user->nama;
             $_SESSION['role'] = $user->role;
-            $_SESSION['last_login'] = date('Y-m-d H:i:s'); // Save login time in WIB
+            $_SESSION['last_login'] = date('Y-m-d H:i:s'); 
 
             if ($user->role === 'admin') {
                 redirect('admin/dashboard.php');
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <!-- Performance Optimization -->
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
@@ -65,19 +65,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     <title>Login - Lapor Sampah</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
     
-    <!-- Critical CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Fonts - Preload -->
+    
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Vue 3 - Load synchronously for login form -->
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     
     <style>
@@ -724,7 +724,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </style>
 </head>
 <body>
-    <!-- Back to Home Button - Fixed Position -->
+    
     <div class="back-home">
         <a href="index.php">
             <i class="fas fa-arrow-left"></i> Kembali ke Beranda
@@ -733,7 +733,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     <div class="login-container">
         <div id="loginApp">
-            <!-- Fallback if Vue.js doesn't load -->
+            
             <noscript>
                 <div class="modern-login-card">
                     <div class="login-glass-header">
@@ -778,7 +778,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </span>
                         </button>
                         
-                        <!-- Google Login Button -->
+                        
                         <div class="divider-section">
                             <div class="divider-line"></div>
                             <span class="divider-text">atau</span>
@@ -806,7 +806,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 
-    <!-- Scripts - Bootstrap can be deferred -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <script>
 
@@ -857,7 +857,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </span>
                         </button>
                         
-                        <!-- Google Login Button -->
+                        
                         <div class="divider-section">
                             <div class="divider-line"></div>
                             <span class="divider-text">atau</span>
@@ -963,7 +963,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </span>
                         </button>
                         
-                        <!-- Google Login Button -->
+                        
                         <div class="divider-section">
                             <div class="divider-line"></div>
                             <span class="divider-text">atau</span>
@@ -1113,7 +1113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </span>
                         </button>
                         
-                        <!-- Google Login Button -->
+                        
                         <div class="divider-section">
                             <div class="divider-line"></div>
                             <span class="divider-text">atau</span>

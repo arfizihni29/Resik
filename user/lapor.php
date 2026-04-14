@@ -30,12 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $lokasi_latitude = $_POST['lokasi_latitude'];
     $lokasi_longitude = $_POST['lokasi_longitude'];
     $alamat_lokasi = trim($_POST['alamat_lokasi']);
-    $whatsapp_number = trim($_POST['whatsapp_number']); // Nomor WhatsApp
+    $whatsapp_number = trim($_POST['whatsapp_number']); 
     $confidence = $_POST['confidence'];
     $engine_prediction = $_POST['engine_prediction'];
     $is_corrected = (isset($_POST['is_corrected']) && $_POST['is_corrected'] == '1') ? 1 : 0;
     $correction_note = trim($_POST['correction_note'] ?? '');
-    $tags = trim($_POST['tags'] ?? ''); // Tags untuk analitik
+    $tags = trim($_POST['tags'] ?? ''); 
     
 
     if (isset($_POST['save_location']) && $_POST['save_location'] == '1') {
@@ -75,12 +75,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $report->lokasi_latitude = $lokasi_latitude;
                 $report->lokasi_longitude = $lokasi_longitude;
                 $report->alamat_lokasi = $alamat_lokasi;
-                $report->whatsapp_number = $whatsapp_number; // Nomor WhatsApp
+                $report->whatsapp_number = $whatsapp_number; 
                 $report->confidence = $confidence;
                 $report->engine_prediction = $engine_prediction;
                 $report->is_corrected = $is_corrected;
                 $report->correction_note = $correction_note;
-                $report->tags = $tags; // Tags untuk analitik
+                $report->tags = $tags; 
                 $report->status = 'pending';
 
                 if ($report->create()) {
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="theme-color" content="#14b8a6">
     <title>Lapor Sampah - Pelaporan Sampah</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -129,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="../assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Select2 for searchable dropdown -->
+    
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
     
@@ -1625,7 +1625,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="dashboard.php">
@@ -1666,11 +1666,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </nav>
 
-    <!-- Content -->
+    
     <div class="container mb-5">
         <div class="row justify-content-center">
             <div class="col-lg-10">
-                <!-- Hero Header -->
+                
                 <div class="text-center mb-4 mt-4">
                     <h1 style="font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 800; color: #0f766e; margin-bottom: 0.75rem; background: linear-gradient(135deg, #0f766e, #14b8a6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
                         <i class="fas fa-recycle" style="-webkit-text-fill-color: #14b8a6;"></i> Lapor Sampah Pintar
@@ -1692,10 +1692,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </div>
                         <?php endif; ?>
 
-                <!-- AI Model Loading Indicator -->
+                
                 <div id="aiModelLoading" style="display: none;" class="mb-3"></div>
 
-                <!-- Progress Indicator -->
+                
                 <div class="progress-indicator fade-in">
                     <div class="progress-step active" id="step0">
                         <div class="progress-step-circle">0</div>
@@ -1720,7 +1720,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
 
                         <form method="POST" action="" enctype="multipart/form-data" id="laporForm">
-                            <!-- STEP 0: Edukasi Jenis Sampah - Minimalis -->
+                            
                             <div class="form-section mb-4" id="section-edukasi" style="background: white; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); border: 1px solid #e5e7eb;">
                                 <h6 class="mb-3" style="font-weight: 600; color: #1f2937; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
                                     <i class="fas fa-book-open" style="color: #14b8a6; font-size: 1rem;"></i>
@@ -1733,9 +1733,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </small>
                                 </div>
 
-                                <!-- Jenis Sampah Cards - Minimalis -->
+                                
                                 <div class="row g-2 mb-3">
-                                    <!-- Organik -->
+                                    
                                     <div class="col-md-4">
                                         <div class="card h-100" style="border: 1px solid #10b981; border-radius: 8px; overflow: hidden;">
                                             <div class="card-body" style="padding: 1rem;">
@@ -1763,7 +1763,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         </div>
                                     </div>
 
-                                    <!-- Anorganik -->
+                                    
                                     <div class="col-md-4">
                                         <div class="card h-100" style="border: 1px solid #3b82f6; border-radius: 8px; overflow: hidden;">
                                             <div class="card-body" style="padding: 1rem;">
@@ -1791,7 +1791,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         </div>
                                     </div>
 
-                                    <!-- B3 -->
+                                    
                                     <div class="col-md-4">
                                         <div class="card h-100" style="border: 1px solid #ef4444; border-radius: 8px; overflow: hidden;">
                                             <div class="card-body" style="padding: 1rem;">
@@ -1820,7 +1820,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </div>
                                 </div>
 
-                                <!-- Tips Minimalis -->
+                                
                                 <div class="alert alert-warning mb-3" style="background: #fffbeb; border: 1px solid #fcd34d; border-radius: 8px; padding: 0.75rem;">
                                     <small style="color: #78350f; font-size: 0.8125rem; line-height: 1.5;">
                                         <i class="fas fa-lightbulb" style="color: #f59e0b;"></i> 
@@ -1828,7 +1828,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </small>
                                 </div>
 
-                                <!-- Continue Button - Minimalis -->
+                                
                                 <div class="text-center">
                                     <button type="button" class="btn btn-success" id="btn-continue-edukasi" onclick="continueToUpload()" style="padding: 0.625rem 1.5rem; font-size: 0.9375rem; font-weight: 600; border-radius: 8px;">
                                         <i class="fas fa-check-circle me-2"></i> Lanjutkan
@@ -1836,7 +1836,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </div>
 
-                            <!-- STEP 1: Upload Gambar -->
+                            
                             <div class="form-section mb-4" id="section-upload" style="background: white; border-radius: 24px; padding: 2rem; box-shadow: 0 8px 32px rgba(20, 184, 166, 0.12); border: 2px solid rgba(20, 184, 166, 0.1); display: none;">
                                 <h5 class="mb-4" style="font-weight: 700; color: #0f766e; font-size: 1.25rem; display: flex; align-items: center; gap: 10px;">
                                     <span style="background: linear-gradient(135deg, #14b8a6, #0d9488); color: white; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
@@ -1845,7 +1845,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     Step 1: Upload Foto Sampah
                                 </h5>
                                 
-                                <!-- Upload Options -->
+                                
                                 <div class="image-upload-options">
                                     <div class="upload-option-btn" onclick="document.getElementById('gambar').click()">
                                         <div><i class="fas fa-image"></i></div>
@@ -1859,11 +1859,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </div>
                             </div>
                                 
-                                <!-- Hidden file inputs -->
+                                
                                 <input type="file" id="gambar" name="gambar" accept="image/*" style="display: none;" required>
                                 <input type="file" id="cameraInput" accept="image/*" capture="environment" style="display: none;">
                                 
-                                <!-- Info Box Helper -->
+                                
                                 <div class="info-box" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border: 2px solid #fbbf24; border-radius: 16px; padding: 1.25rem; margin-top: 1rem;">
                                     <h6 style="color: #92400e; font-weight: 700; margin-bottom: 0.75rem;">
                                         <i class="fas fa-lightbulb" style="color: #f59e0b;"></i> Tips Upload Foto
@@ -1875,7 +1875,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </ul>
                                 </div>
 
-                            <!-- Image Preview (Enhanced) -->
+                            
                                 <div class="mb-4" id="imagePreviewContainer" style="display: none;">
                                     <div class="image-preview-card">
                                         <div class="image-preview-header">
@@ -1914,7 +1914,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </div>
                             </div>
                             
-                            <!-- Fullscreen Zoom Modal -->
+                            
                             <div id="zoomModal" class="zoom-modal" style="display: none;" onclick="closeZoom()">
                                 <span class="zoom-close">&times;</span>
                                 <div class="zoom-content">
@@ -1936,27 +1936,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </div>
 
-                            <!-- Loading Spinner -->
+                            
                                 <div class="spinner-container" id="loadingSpinner" style="display: none;">
                                 <div class="spinner-border" role="status"></div>
                                 <p class="mt-2">Menganalisis gambar...</p>
                             </div>
 
-                            <!-- Classification Result -->
+                            
                             <div id="classificationResult" style="display: none;"></div>
 
-                                <!-- Confirmation Status -->
+                                
                                 <div id="confirmationStatus" style="display: none;" class="mt-3"></div>
                             </div>
 
-                            <!-- Manual Correction Section (Hidden, shown in modal) -->
+                            
                             <div id="correctionSection" style="display: none;" class="mb-3">
                                 <div class="card" style="border: 2px solid #ff9800;">
                                     <div class="card-header" style="background: #fff3e0; color: #f57c00;">
                                         <i class="fas fa-edit"></i> Koreksi Manual (Sistem Salah)
                                     </div>
                                     <div class="card-body">
-                                        <!-- Info Box Bantuan -->
+                                        
                                         <div class="alert alert-info" style="background-color: #e3f2fd; border-left: 4px solid #2196f3; margin-bottom: 1rem;">
                                             <h6 style="color: #1976d2; margin-bottom: 0.5rem;">
                                                 <i class="fas fa-question-circle"></i> Tidak Yakin Kategori yang Benar?
@@ -2023,13 +2023,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </div>
 
-                            <!-- Hidden inputs for classification -->
+                            
                             <input type="hidden" id="kategori" name="kategori" required>
                             <input type="hidden" id="confidence" name="confidence">
                             <input type="hidden" id="ai_prediction" name="ai_prediction">
                             <input type="hidden" id="is_corrected" name="is_corrected" value="0">
 
-                            <!-- STEP 3: Isi Detail -->
+                            
                             <div class="form-section form-disabled" id="section-details" style="background: white; border-radius: 24px; padding: 2rem; box-shadow: 0 8px 32px rgba(20, 184, 166, 0.12); border: 2px solid rgba(20, 184, 166, 0.1);">
                                 <h5 class="mb-4" style="font-weight: 700; color: #0f766e; font-size: 1.25rem; display: flex; align-items: center; gap: 10px;">
                                     <span style="background: linear-gradient(135deg, #14b8a6, #0d9488); color: white; width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
@@ -2038,7 +2038,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     Step 3: Isi Detail Laporan
                                 </h5>
 
-                            <!-- Jenis Sampah Detail -->
+                            
                             <div class="mb-3">
                                 <label for="jenis_sampah" class="form-label">
                                         <i class="fas fa-tag"></i> Jenis Sampah Spesifik <span class="text-danger">*</span>
@@ -2167,7 +2167,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </div>
 
-                            <!-- Deskripsi -->
+                            
                             <div class="mb-3">
                                 <label for="deskripsi" class="form-label">
                                         <i class="fas fa-comment"></i> Deskripsi & Catatan (Opsional)
@@ -2179,7 +2179,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </div>
 
-                                <!-- Quick Location Presets -->
+                                
                                 <?php if ($savedLocations): ?>
                                 <div class="mb-3">
                                     <label class="form-label">
@@ -2196,7 +2196,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                                 <?php endif; ?>
 
-                            <!-- Lokasi -->
+                            
                             <div class="mb-3">
                                 <label class="form-label">
                                         <i class="fas fa-map-marker-alt"></i> Lokasi Sampah <span class="text-danger">*</span>
@@ -2217,7 +2217,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </small>
                             </div>
 
-                            <!-- Alamat Lokasi -->
+                            
                             <div class="mb-3">
                                 <label for="alamat_lokasi" class="form-label">
                                         <i class="fas fa-home"></i> Alamat Lokasi <span class="text-danger">*</span>
@@ -2234,7 +2234,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </small>
                             </div>
 
-                                <!-- Nomor WhatsApp -->
+                                
                                 <div class="mb-3">
                                     <label for="whatsapp_number" class="form-label">
                                         <i class="fab fa-whatsapp"></i> Nomor WhatsApp <span class="text-danger">*</span>
@@ -2253,7 +2253,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </small>
                                 </div>
 
-                                <!-- Save Location Option -->
+                                
                                 <div class="mb-3">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="save_location" name="save_location" value="1">
@@ -2267,7 +2267,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     </div>
                                 </div>
 
-                                <!-- Tags untuk Analitik -->
+                                
                                 <div class="mb-4">
                                     <label for="tags_input" class="form-label">
                                         <i class="fas fa-tags"></i> Tags (Opsional - untuk analitik data)
@@ -2284,7 +2284,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <div class="form-text">
                                         <i class="fas fa-info-circle"></i> Tags membantu admin menganalisis pola sampah. Contoh: basah, berbau, menumpuk, dll.
                                     </div>
-                                    <!-- Suggested Tags -->
+                                    
                                     <div class="mt-2">
                                         <small class="text-muted d-block mb-1"><i class="fas fa-lightbulb"></i> Saran tags:</small>
                                         <div class="suggested-tags">
@@ -2301,7 +2301,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </div>
 
-                            <!-- Submit Buttons -->
+                            
                             <div class="d-grid gap-2">
                                 <button type="button" class="btn btn-primary btn-lg" id="reviewSubmitBtn" disabled>
                                     <i class="fas fa-check-circle"></i> Review & Kirim Laporan
@@ -2314,7 +2314,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
                 </div>
 
-                <!-- Info Cards -->
+                
                 <div class="row mt-4">
                     <div class="col-md-4 mb-3">
                         <div class="card h-100">
@@ -2348,17 +2348,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 
-    <!-- AI Confirmation Modal -->
+    
     <div id="aiConfirmationModal" style="display: none;">
-        <!-- Modal content will be injected by JavaScript -->
+        
     </div>
     
-    <!-- Preview Modal -->
+    
     <div id="previewModal" style="display: none;">
-        <!-- Modal content will be injected by JavaScript -->
+        
     </div>
     
-    <!-- Thank You Modal - Minimalis & Modern -->
+    
     <?php if ($success): ?>
     <div id="thankYouModal" class="thank-you-modal-overlay" onclick="if(event.target === this) window.location.href='dashboard.php'">
         <div class="thank-you-content" onclick="event.stopPropagation()">
@@ -2386,7 +2386,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <?php endif; ?>
 
-    <!-- Footer -->
+    
     <div class="footer">
         <p>&copy; 2024 Sistem Pelaporan Sampah Lingkungan | Powered by Teachable Machine</p>
     </div>
@@ -2611,7 +2611,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     <i class="fas fa-chart-line"></i> ${prediction.confidence}% confidence
                                 </div>
                                 
-                                <!-- Object Details Hidden for Privacy -->
+                                
                             </div>
                             
                             <div class="text-center mb-3">

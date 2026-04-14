@@ -5,7 +5,7 @@ require_once '../config/Database.php';
 checkLogin();
 checkAdmin();
 
-$currentPage = 'backup'; // For navbar active state
+$currentPage = 'backup'; 
 
 $database = new Database();
 $db = $database->getConnection();
@@ -128,7 +128,7 @@ function formatBytes($bytes) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Database Backup - Admin</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -382,11 +382,11 @@ function formatBytes($bytes) {
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    
     <?php include 'includes/navbar.php'; ?>
 
     <div class="container py-5">
-        <!-- Header -->
+        
         <div class="page-header fade-in">
             <div class="row align-items-center">
                 <div class="col-lg-8">
@@ -417,7 +417,7 @@ function formatBytes($bytes) {
         </div>
         <?php endif; ?>
 
-        <!-- Stats Row -->
+        
         <div class="row g-4 mb-5">
             <div class="col-md-4">
                 <div class="stat-card stat-bg-primary">
@@ -452,7 +452,7 @@ function formatBytes($bytes) {
         </div>
 
         <div class="row g-4">
-            <!-- Left Column: Actions -->
+            
             <div class="col-lg-5">
                 <div class="glass-card action-card mb-4">
                     <div class="mb-4">
@@ -496,7 +496,7 @@ function formatBytes($bytes) {
                 </div>
             </div>
 
-            <!-- Right Column: Tables List -->
+            
             <div class="col-lg-7">
                 <div class="glass-card p-4">
                     <h4 class="fw-bold mb-4 d-flex align-items-center">
@@ -535,7 +535,7 @@ function formatBytes($bytes) {
         </div>
     </div>
 
-    <!-- Scripts -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
 

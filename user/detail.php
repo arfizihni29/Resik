@@ -43,7 +43,7 @@ $commentCount = count($reportComments);
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <!-- Navbar -->
+    
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="dashboard.php">
@@ -84,7 +84,7 @@ $commentCount = count($reportComments);
         </div>
     </nav>
 
-    <!-- Content -->
+    
     <div class="container mt-4 mb-5">
         <?php if (isset($_SESSION['success'])): ?>
             <div class="alert alert-success alert-dismissible fade show">
@@ -106,7 +106,7 @@ $commentCount = count($reportComments);
                         <i class="fas fa-file-alt"></i> Detail Laporan #<?php echo $reportData['id']; ?>
                     </div>
                     <div class="card-body">
-                        <!-- Image -->
+                        
                         <div class="text-center mb-4">
                             <div class="position-relative d-inline-block">
                                 <img src="<?php echo getImageUrl($reportData['gambar']); ?>" 
@@ -122,10 +122,10 @@ $commentCount = count($reportComments);
                             </div>
                         </div>
 
-                        <!-- Classification Info -->
+                        
                         <div class="classification-result mb-4">
                             <?php if (isset($reportData['is_corrected']) && $reportData['is_corrected']): ?>
-                                <!-- Show correction info -->
+                                
                                 <h5><i class="fas fa-user-edit"></i> Hasil Setelah Koreksi Manual</h5>
                                 <div class="alert" style="background-color: #fff3e0; border-left: 4px solid #ff9800;">
                                     <p class="mb-0">
@@ -180,7 +180,7 @@ $commentCount = count($reportComments);
                             </div>
                         </div>
 
-                        <!-- Jenis Sampah Detail -->
+                        
                         <?php if (isset($reportData['jenis_sampah'])): ?>
                             <?php $jenisInfo = getJenisSampahInfo($reportData['jenis_sampah']); ?>
                             <div class="mb-4">
@@ -193,7 +193,7 @@ $commentCount = count($reportComments);
                             </div>
                         <?php endif; ?>
 
-                        <!-- Description -->
+                        
                         <?php if ($reportData['deskripsi']): ?>
                             <div class="mb-4">
                                 <h6><i class="fas fa-edit"></i> Deskripsi</h6>
@@ -201,7 +201,7 @@ $commentCount = count($reportComments);
                             </div>
                         <?php endif; ?>
 
-                        <!-- Tags -->
+                        
                         <?php if (!empty($reportData['tags'])): ?>
                             <div class="mb-4">
                                 <h6><i class="fas fa-tags"></i> Tags</h6>
@@ -223,14 +223,14 @@ $commentCount = count($reportComments);
                             </div>
                         <?php endif; ?>
 
-                        <!-- Location -->
+                        
                         <div class="mb-4">
                             <h6><i class="fas fa-map-marker-alt"></i> Lokasi</h6>
                             <p><?php echo htmlspecialchars($reportData['alamat_lokasi']); ?></p>
                             <div id="detailMap" style="height: 300px; border-radius: 10px;"></div>
                         </div>
 
-                        <!-- Rejection Notice (if rejected) -->
+                        
                         <?php if ($reportData['status'] == 'ditolak' && !empty($reportData['rejection_reason'])): ?>
                         <div class="alert alert-danger mb-4" style="border-left: 4px solid #ef4444; background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);">
                             <h5 class="mb-3" style="color: #991b1b;">
@@ -250,7 +250,7 @@ $commentCount = count($reportComments);
                         </div>
                         <?php endif; ?>
 
-                        <!-- Action Buttons -->
+                        
                         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                             <a href="dashboard.php" class="btn btn-outline-secondary">
                                 <i class="fas fa-arrow-left"></i> Kembali
@@ -264,7 +264,7 @@ $commentCount = count($reportComments);
                     </div>
                 </div>
 
-                <!-- Komentar dari Admin -->
+                
                 <?php if ($commentCount > 0): ?>
                 <div class="card fade-in mt-4">
                     <div class="card-header" style="background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); color: white;">
@@ -299,7 +299,7 @@ $commentCount = count($reportComments);
             </div>
 
             <div class="col-lg-4">
-                <!-- Status Card -->
+                
                 <div class="card mb-3 fade-in">
                     <div class="card-header">
                         <i class="fas fa-info-circle"></i> Informasi Laporan
@@ -347,7 +347,7 @@ $commentCount = count($reportComments);
                     </div>
                 </div>
 
-                <!-- Status Timeline -->
+                
                 <div class="card fade-in">
                     <div class="card-header">
                         <i class="fas fa-tasks"></i> Status Pemrosesan
@@ -382,12 +382,12 @@ $commentCount = count($reportComments);
         </div>
     </div>
 
-    <!-- Footer -->
+    
     <div class="footer">
         <p>&copy; 2024 RESIK - Sistem Manajemen Sampah Desa</p>
     </div>
 
-    <!-- Image Zoom Modal -->
+    
     <div class="modal fade" id="imageZoomModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content" style="background: rgba(0, 0, 0, 0.95);">

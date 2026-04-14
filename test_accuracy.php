@@ -4,12 +4,12 @@ require_once 'config/Database.php';
 
 
 
-/*
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: login.php");
-    exit;
-}
-*/
+
+
+
+
+
+
 
 $currentPage = 'test_accuracy'; 
 ?>
@@ -20,14 +20,14 @@ $currentPage = 'test_accuracy';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uji Akurasi AI - Resik</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     
-    <!-- Bootstrap & Icons -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -54,7 +54,7 @@ $currentPage = 'test_accuracy';
     </style>
 </head>
 <body>
-    <!-- Navbar (Simplified) -->
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.php">
@@ -67,7 +67,7 @@ $currentPage = 'test_accuracy';
     </nav>
 
     <div class="container mt-4 mb-5">
-        <!-- Header & Stats -->
+        
         <div class="row align-items-center mb-4">
             <div class="col-md-6 mb-3 mb-md-0">
                 <h2 class="fw-bold text-gray-800">Uji Akurasi Sistem</h2>
@@ -94,7 +94,7 @@ $currentPage = 'test_accuracy';
             </div>
         </div>
 
-        <!-- Action Area -->
+        
         <div class="card mb-4">
             <div class="card-body p-4">
                 <div class="row align-items-center">
@@ -125,7 +125,7 @@ $currentPage = 'test_accuracy';
             </div>
         </div>
 
-        <!-- Results Table -->
+        
         <div class="card">
             <div class="card-body p-0">
                 <div class="table-responsive">
@@ -154,12 +154,12 @@ $currentPage = 'test_accuracy';
         </div>
     </div>
 
-    <!-- Scripts -->
-    <!-- TensorFlow & Teachable Machine -->
+    
+    
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
     
-    <!-- Classifier Logic -->
+    
     <script src="assets/js/classifier.js"></script>
 
     <script>

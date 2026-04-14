@@ -47,7 +47,7 @@ $data = [
     ]
 ];
 
-$apiKey = ENGINE_KEY; // From engine_config.php
+$apiKey = ENGINE_KEY; 
 $url = ENGINE_BASE_URL . '/' . ENGINE_MODEL . ':generateContent?key=' . $apiKey;
 
 $ch = curl_init($url);

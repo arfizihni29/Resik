@@ -7,7 +7,7 @@ let defaultLng = 106.816666;
 
 map = L.map('map').setView([defaultLat, defaultLng], 13);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+L.tileLayer('https:
     attribution: '© OpenStreetMap contributors',
     maxZoom: 19
 }).addTo(map);

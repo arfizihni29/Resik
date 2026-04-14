@@ -119,7 +119,7 @@ $daysSinceJoin = $now->diff($joinDate)->days;
     <meta name="theme-color" content="#14b8a6">
     <title>Profile - Pelaporan Sampah</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -482,7 +482,7 @@ $daysSinceJoin = $now->diff($joinDate)->days;
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="dashboard.php">
@@ -523,7 +523,7 @@ $daysSinceJoin = $now->diff($joinDate)->days;
         </div>
     </nav>
 
-    <!-- Content -->
+    
     <div class="container mt-4 mb-5">
             <?php if ($success): ?>
             <div class="alert alert-success alert-dismissible fade show slide-in" style="border-radius: 16px; border: 2px solid #10b981; background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);">
@@ -539,9 +539,9 @@ $daysSinceJoin = $now->diff($joinDate)->days;
             <?php endif; ?>
 
             <div class="row">
-            <!-- Left Column - Profile Card & Stats -->
+            
             <div class="col-lg-4 mb-4">
-                <!-- Profile Card -->
+                
                 <div class="profile-card fade-in mb-4">
                     <div class="profile-avatar" style="background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1)); border: 5px solid rgba(255, 255, 255, 0.3); overflow: hidden;">
                         <?php if (!empty($userData['google_picture'])): ?>
@@ -570,7 +570,7 @@ $daysSinceJoin = $now->diff($joinDate)->days;
                     </div>
                         </div>
 
-                <!-- Account Info -->
+                
                 <div class="modern-card fade-in">
                     <div class="info-box-title">
                         <i class="fas fa-info-circle"></i> Informasi Akun
@@ -590,9 +590,9 @@ $daysSinceJoin = $now->diff($joinDate)->days;
                                     </div>
                                 </div>
 
-            <!-- Right Column - Forms & Stats -->
+            
             <div class="col-lg-8">
-                <!-- Statistics Cards -->
+                
                 <div class="row mb-4">
                     <div class="col-md-3 col-6 mb-3">
                         <div class="stat-card stat-primary fade-in" style="animation-delay: 0.1s;">
@@ -632,7 +632,7 @@ $daysSinceJoin = $now->diff($joinDate)->days;
                     </div>
                 </div>
 
-                <!-- Category Stats -->
+                
                 <div class="row mb-4">
                     <div class="col-md-4 col-4 mb-3">
                         <div class="stat-card stat-success fade-in" style="animation-delay: 0.5s;">
@@ -663,7 +663,7 @@ $daysSinceJoin = $now->diff($joinDate)->days;
                     </div>
                 </div>
 
-                <!-- Edit Profile Form -->
+                
                 <div class="modern-card slide-in">
                     <h2 class="card-title-modern">
                         <i class="fas fa-user-edit"></i> Edit Profile
@@ -802,7 +802,7 @@ $daysSinceJoin = $now->diff($joinDate)->days;
                     </form>
                     </div>
 
-                    <!-- Change Password Form (Only for non-Google users) -->
+                    
                     <?php if (empty($userData['google_id'])): ?>
                 <div class="modern-card slide-in" style="animation-delay: 0.2s;">
                     <h2 class="card-title-modern">
@@ -849,7 +849,7 @@ $daysSinceJoin = $now->diff($joinDate)->days;
                     </form>
                 </div>
                     <?php else: ?>
-                <!-- Google users don't have passwords -->
+                
                 <div class="modern-card slide-in" style="animation-delay: 0.2s;">
                     <h2 class="card-title-modern">
                         <i class="fas fa-lock"></i> Ubah Password
@@ -871,7 +871,7 @@ $daysSinceJoin = $now->diff($joinDate)->days;
         </div>
     </div>
 
-    <!-- Footer -->
+    
     <div class="footer">
         <p>&copy; 2024 Sistem Pelaporan Sampah Desa | Powered by Teachable Machine</p>
     </div>

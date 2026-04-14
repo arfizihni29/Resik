@@ -38,7 +38,7 @@ foreach ($allReports as $r) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peta Interaktif - Admin</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -426,22 +426,22 @@ foreach ($allReports as $r) {
     <?php include 'includes/navbar.php'; ?>
 
     <div class="container-fluid mt-3 mb-3">
-        <!-- Search Box -->
+        
         <div class="search-float">
             <input type="text" class="form-control" id="searchLocation" placeholder="Cari lokasi...">
         </div>
 
-        <!-- Map -->
+        
         <div id="mapContainer"></div>
 
-        <!-- Control Panel -->
+        
         <div class="control-float" id="controlPanel">
             <div class="control-header" onclick="toggleControlPanel()">
                 <h6><i class="fas fa-sliders-h"></i> Kontrol</h6>
                 <i class="fas fa-chevron-down" id="panelToggle"></i>
             </div>
             <div class="control-body">
-                <!-- Stats -->
+                
                 <div class="stat-mini">
                     <div class="stat-item-mini">
                         <div class="number" id="totalReports"><?php echo count($allReports); ?></div>
@@ -459,7 +459,7 @@ foreach ($allReports as $r) {
 
                 <div class="section-divider"></div>
 
-                <!-- Category Filter -->
+                
                 <div style="margin-bottom: 12px;">
                     <label style="font-size: 0.75rem; color: var(--text-light); margin-bottom: 8px; display: block;">Kategori</label>
                     <div>
@@ -483,7 +483,7 @@ foreach ($allReports as $r) {
 
                 <div class="section-divider"></div>
 
-                <!-- Status Filter -->
+                
                 <div style="margin-bottom: 12px;">
                     <label style="font-size: 0.75rem; color: var(--text-light); margin-bottom: 8px; display: block;">Status</label>
                     <select class="form-control-mini form-select form-select-sm" id="statusFilter">
@@ -497,7 +497,7 @@ foreach ($allReports as $r) {
 
                 <div class="section-divider"></div>
 
-                <!-- Toggle Controls -->
+                
                 <div>
                     <div class="toggle-mini">
                         <label><i class="fas fa-map-marker-alt"></i> Markers</label>
@@ -521,7 +521,7 @@ foreach ($allReports as $r) {
 
                 <div class="section-divider"></div>
 
-                <!-- Date Filter -->
+                
                 <div style="margin-bottom: 12px;">
                     <label style="font-size: 0.75rem; color: var(--text-light); margin-bottom: 8px; display: block;">Tanggal</label>
                     <input type="date" class="form-control-mini form-control form-control-sm" id="dateFrom" style="margin-bottom: 8px;">
@@ -530,7 +530,7 @@ foreach ($allReports as $r) {
             </div>
         </div>
 
-        <!-- Map Controls -->
+        
         <div class="map-controls">
             <div class="map-btn" onclick="resetView()" title="Reset View">
                 <i class="fas fa-home"></i>
@@ -546,7 +546,7 @@ foreach ($allReports as $r) {
             </div>
         </div>
 
-        <!-- Legend -->
+        
         <div class="legend-mini">
             <div class="legend-item-mini">
                 <div class="legend-dot" style="background: var(--organik);"></div>
@@ -562,7 +562,7 @@ foreach ($allReports as $r) {
         </div>
     </div>
 
-        <!-- Info Panel -->
+        
         <div class="info-float" id="infoPanel">
             <div id="infoContent"></div>
         </div>

@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $is_corrected = isset($_POST['is_corrected']) ? 1 : 0;
     $correction_note = trim($_POST['correction_note'] ?? '');
     
-    $gambar = $reportData['gambar']; // Keep old image by default
+    $gambar = $reportData['gambar']; 
 
 
     if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] == 0) {
@@ -124,12 +124,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- Select2 for searchable dropdown -->
+    
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet" />
 </head>
 <body>
-    <!-- Navbar -->
+    
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="dashboard.php">
@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </nav>
 
-    <!-- Content -->
+    
     <div class="container mt-4 mb-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -194,7 +194,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </div>
 
                         <form method="POST" enctype="multipart/form-data" id="editForm">
-                            <!-- Preview Gambar Lama -->
+                            
                             <div class="mb-3">
                                 <label class="form-label fw-bold">Gambar Saat Ini:</label>
                                 <div>
@@ -206,7 +206,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </div>
 
-                            <!-- Upload Gambar Baru (Optional) -->
+                            
                             <div class="mb-4">
                                 <label class="form-label fw-bold">
                                     <i class="fas fa-camera"></i> Ganti Gambar (Opsional)
@@ -218,13 +218,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </div>
 
-                            <!-- AI Classification Result (Hidden Fields) -->
+                            
                             <input type="hidden" name="kategori" id="kategori" value="<?php echo htmlspecialchars($reportData['kategori']); ?>">
                             <input type="hidden" name="confidence" id="confidence" value="<?php echo htmlspecialchars($reportData['confidence']); ?>">
                             <input type="hidden" name="ai_prediction" id="aiPrediction" value="<?php echo htmlspecialchars($reportData['ai_prediction']); ?>">
                             <input type="hidden" name="is_corrected" id="isCorrected" value="<?php echo $reportData['is_corrected'] ? '1' : '0'; ?>">
 
-                            <!-- Current Classification -->
+                            
                             <div class="mb-4" id="classificationResult">
                                 <h6><i class="fas fa-tag"></i> Kategori Sampah Saat Ini</h6>
                                 <div class="alert alert-success">
@@ -245,14 +245,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                                 <?php endif; ?>
 
-                                <!-- Button to enable correction -->
+                                
                                 <button type="button" class="btn btn-warning btn-sm" id="toggleCorrectionBtn">
                                     <i class="fas fa-edit"></i> 
                                     <?php echo $reportData['is_corrected'] ? 'Ubah Koreksi' : 'Koreksi Manual'; ?>
                                 </button>
                             </div>
 
-                            <!-- Manual Correction Section -->
+                            
                             <div class="mb-4" id="correctionSection" style="display: <?php echo $reportData['is_corrected'] ? 'block' : 'none'; ?>;">
                                 <div class="card border-warning">
                                     <div class="card-header bg-warning text-dark">
@@ -326,7 +326,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </div>
 
-                            <!-- Jenis Sampah -->
+                            
                             <div class="mb-4">
                                 <label class="form-label fw-bold">
                                     <i class="fas fa-list"></i> Jenis Sampah Spesifik
@@ -454,7 +454,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </select>
                             </div>
 
-                            <!-- Deskripsi -->
+                            
                             <div class="mb-4">
                                 <label class="form-label fw-bold">
                                     <i class="fas fa-align-left"></i> Deskripsi
@@ -463,7 +463,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                           placeholder="Deskripsikan kondisi sampah..."><?php echo htmlspecialchars($reportData['deskripsi']); ?></textarea>
                             </div>
 
-                            <!-- Lokasi -->
+                            
                             <div class="mb-4">
                                 <label class="form-label fw-bold">
                                     <i class="fas fa-map-marker-alt"></i> Lokasi Sampah
@@ -480,7 +480,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <div id="map" style="height: 300px; border-radius: 10px;"></div>
                             </div>
 
-                            <!-- Buttons -->
+                            
                             <div class="d-grid gap-2 d-md-flex justify-content-md-between">
                                 <a href="dashboard.php" class="btn btn-secondary">
                                     <i class="fas fa-arrow-left"></i> Batal
@@ -496,7 +496,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 
-    <!-- Footer -->
+    
     <div class="footer">
         <p>&copy; 2024 RESIK - Sistem Manajemen Sampah Desa</p>
     </div>

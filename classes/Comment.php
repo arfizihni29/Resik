@@ -15,9 +15,9 @@ class Comment {
         $this->ensureTableExists();
     }
 
-    /**
-     * Auto-create table jika belum ada
-     */
+    
+
+
     private function ensureTableExists() {
         try {
 

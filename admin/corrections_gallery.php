@@ -6,7 +6,7 @@ require_once '../classes/CorrectionManager.php';
 checkLogin();
 checkAdmin();
 
-$currentPage = 'gallery'; // For navbar active state
+$currentPage = 'gallery'; 
 
 $correctionManager = new CorrectionManager();
 $stats = $correctionManager->getStatistics();
@@ -45,7 +45,7 @@ if ($filterFrom !== 'all' && $filterTo !== 'all') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeri Gambar Koreksi - Admin</title>
     
-    <!-- Favicon -->
+    
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="alternate icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="../favicon.svg">
@@ -109,10 +109,10 @@ if ($filterFrom !== 'all' && $filterTo !== 'all') {
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+    
     <?php include 'includes/navbar.php'; ?>
 
-    <!-- Content -->
+    
     <div class="container-fluid mt-4 mb-5">
         <div class="fade-in">
             <?php if (isset($_SESSION['success'])): ?>
@@ -133,7 +133,7 @@ if ($filterFrom !== 'all' && $filterTo !== 'all') {
                 <i class="fas fa-images"></i> Galeri Gambar Koreksi AI
             </h2>
 
-            <!-- Info Alert -->
+            
             <div class="alert" style="background-color: #e8f5e9; border-left: 4px solid #4caf50;">
                 <h5 style="color: #2e7d32; margin-bottom: 10px;">
                     <i class="fas fa-info-circle"></i> Tentang Galeri Ini
@@ -144,7 +144,7 @@ if ($filterFrom !== 'all' && $filterTo !== 'all') {
                 </p>
             </div>
 
-            <!-- Statistics Matrix -->
+            
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-chart-bar"></i> Matriks Koreksi AI
@@ -220,7 +220,7 @@ if ($filterFrom !== 'all' && $filterTo !== 'all') {
                 </div>
             </div>
 
-            <!-- Gallery Display -->
+            
             <?php if ($filterFrom !== 'all' && $filterTo !== 'all'): ?>
                 <div class="card">
                     <div class="card-header">
@@ -242,7 +242,7 @@ if ($filterFrom !== 'all' && $filterTo !== 'all') {
                     </div>
                     <div class="card-body">
                         <?php if (count($images) > 0): ?>
-                            <!-- Action Buttons -->
+                            
                             <div class="mb-3">
                                 <button class="btn btn-success" onclick="downloadAllImages()">
                                     <i class="fas fa-download"></i> Download Semua (<?php echo count($images); ?> gambar)
@@ -260,7 +260,7 @@ if ($filterFrom !== 'all' && $filterTo !== 'all') {
                                 </span>
                             </div>
 
-                            <!-- Gallery Grid -->
+                            
                             <div class="row g-3">
                                 <?php foreach ($images as $img): ?>
                                     <div class="col-6 col-md-4 col-lg-3 col-xl-2">
@@ -304,7 +304,7 @@ if ($filterFrom !== 'all' && $filterTo !== 'all') {
                 </div>
             <?php endif; ?>
 
-            <!-- How to Use -->
+            
             <div class="card mt-4">
                 <div class="card-header" style="background: #2196f3; color: white;">
                     <i class="fas fa-question-circle"></i> Cara Menggunakan Gambar untuk Retrain AI
@@ -327,7 +327,7 @@ if ($filterFrom !== 'all' && $filterTo !== 'all') {
         </div>
     </div>
 
-    <!-- Image Preview Modal -->
+    
     <div class="modal fade" id="imageModal" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
@@ -348,7 +348,7 @@ if ($filterFrom !== 'all' && $filterTo !== 'all') {
         </div>
     </div>
 
-    <!-- Footer -->
+    
     <div class="footer">
         <p>&copy; 2024 Aplikasi Pelaporan Sampah dengan AI | Powered by Teachable Machine</p>
     </div>
